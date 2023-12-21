@@ -1,10 +1,11 @@
-﻿namespace Benchmarks
+﻿using BenchmarkDotNet.Running;
+
+namespace Benchmarks;
+
+internal class Program
 {
-    internal class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello, World!");
-        }
+        BenchmarkSwitcher.FromAssembly(typeof(Program).Assembly).Run(args);
     }
 }
