@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1703247214213,
+  "lastUpdate": 1703248042842,
   "repoUrl": "https://github.com/Timmoth/DsaDotnet",
   "entries": {
     "Benchmark.Net Benchmark": [
@@ -98,6 +98,108 @@ window.BENCHMARK_DATA = {
             "value": 93112399.92307693,
             "unit": "ns",
             "range": "± 196018.57801343795"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "t.jones@timmoth.com",
+            "name": "Tim Jones",
+            "username": "Timmoth"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "6fc61784dfd159ae93361ea112b86d5d31fb1680",
+          "message": "Merge pull request #1 from Timmoth/devops/ci\n\nAdded CI workflow",
+          "timestamp": "2023-12-22T12:25:17Z",
+          "tree_id": "748e8c486c546abc3adbad4176baad7878387bb9",
+          "url": "https://github.com/Timmoth/DsaDotnet/commit/6fc61784dfd159ae93361ea112b86d5d31fb1680"
+        },
+        "date": 1703248042497,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Benchmarks.FibonacciBenchmarks.Fib(N: 10)",
+            "value": 4.849851863315473,
+            "unit": "ns",
+            "range": "± 0.01869756985320967"
+          },
+          {
+            "name": "Benchmarks.FibonacciBenchmarks.Fib(N: 100)",
+            "value": 10.443005731472603,
+            "unit": "ns",
+            "range": "± 0.04917131229777016"
+          },
+          {
+            "name": "Benchmarks.BubbleSortBenchmarks.Bubble_Ascending(N: 100)",
+            "value": 2147.703703703704,
+            "unit": "ns",
+            "range": "± 66.52923869352182"
+          },
+          {
+            "name": "Benchmarks.BubbleSortBenchmarks.Bubble_Random(N: 100)",
+            "value": 47202.21212121212,
+            "unit": "ns",
+            "range": "± 2836.047628024432"
+          },
+          {
+            "name": "Benchmarks.BubbleSortBenchmarks.Bubble_Descending(N: 100)",
+            "value": 38878.691780821915,
+            "unit": "ns",
+            "range": "± 1945.2610411625585"
+          },
+          {
+            "name": "Benchmarks.FibonacciBenchmarks.Fib(N: 1000)",
+            "value": 13.84341638641698,
+            "unit": "ns",
+            "range": "± 0.05857208848501411"
+          },
+          {
+            "name": "Benchmarks.BubbleSortBenchmarks.Bubble_Ascending(N: 1000)",
+            "value": 32419.17777777778,
+            "unit": "ns",
+            "range": "± 1186.1423394748833"
+          },
+          {
+            "name": "Benchmarks.BubbleSortBenchmarks.Bubble_Random(N: 1000)",
+            "value": 907584.3076923077,
+            "unit": "ns",
+            "range": "± 12551.106461082858"
+          },
+          {
+            "name": "Benchmarks.BubbleSortBenchmarks.Bubble_Descending(N: 1000)",
+            "value": 975960.3684210526,
+            "unit": "ns",
+            "range": "± 21110.126627891506"
+          },
+          {
+            "name": "Benchmarks.FibonacciBenchmarks.Fib(N: 10000)",
+            "value": 20.94991966017655,
+            "unit": "ns",
+            "range": "± 0.08132641793462118"
+          },
+          {
+            "name": "Benchmarks.BubbleSortBenchmarks.Bubble_Ascending(N: 10000)",
+            "value": 39616.230769230766,
+            "unit": "ns",
+            "range": "± 356.5424598011093"
+          },
+          {
+            "name": "Benchmarks.BubbleSortBenchmarks.Bubble_Random(N: 10000)",
+            "value": 85422851.61538461,
+            "unit": "ns",
+            "range": "± 637891.0144359221"
+          },
+          {
+            "name": "Benchmarks.BubbleSortBenchmarks.Bubble_Descending(N: 10000)",
+            "value": 93309678.21428572,
+            "unit": "ns",
+            "range": "± 379729.4424307874"
           }
         ]
       }
