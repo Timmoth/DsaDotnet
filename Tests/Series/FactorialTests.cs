@@ -4,7 +4,7 @@ using FluentAssertions;
 
 namespace Tests.Series;
 
-public class FactorialTests
+public class BfsTests
 {
     [Theory]
     [InlineData(0, 1)]

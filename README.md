@@ -74,6 +74,25 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Primes*
 ```
 
+## Graphs
+---
+To run the benchmarks for all graph algorithms:
+```console
+ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Graph --join
+```
+
+### Breadth first search
+Usage
+```cs
+var graph = new Graph<int>();
+graph.AddEdges((0, 1), (1, 2), (2, 3));
+var path = graph.BreadthFirstSearch(0, n => n == 3);
+```
+Benchmarks
+```
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Bfs*
+```
+
 ## Sorting
 ---
 

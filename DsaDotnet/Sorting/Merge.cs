@@ -56,6 +56,7 @@ public static partial class Sorting
                 array[k] = rightArray[j];
                 j++;
             }
+
             k++;
         }
 

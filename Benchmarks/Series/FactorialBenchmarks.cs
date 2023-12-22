@@ -5,7 +5,7 @@ namespace Benchmarks.Series;
 
 public class FactorialBenchmarks
 {
-    [Params(10, 100, 1000)] public int N { get; set; }
+    [Params(100, 1000)] public int N { get; set; }
 
     [Benchmark]
     [BenchmarkCategory("Series")]
