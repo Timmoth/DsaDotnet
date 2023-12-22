@@ -35,13 +35,14 @@ dotnet-stryker
 Running Stryker will output a report outlining which mutations (essentially bugs) were introduced into your code that did not cause any tests to fail.
 
 ## Sequence and Series Algorithms
----
 To run the benchmarks for all sorting algorithms:
 ```console
  dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Series --join
 ```
 
 ### Factorial
+---
+
 Usage
 ```cs
 ulong result = Series.Factorial(1000)
@@ -53,6 +54,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 ```
 
 ### Fibonacci
+---
+
 Usage
 ```cs
 ulong result = Series.Fibonacci(1000)
@@ -64,6 +67,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 ```
 
 ### Primes
+---
+
 Usage
 ```cs
 List<int> result = Series.PrimesUpTo(1000)
@@ -75,13 +80,14 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 ```
 
 ## Graphs
----
 To run the benchmarks for all graph algorithms:
 ```console
  dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Graph --join
 ```
 
 ### Breadth first search
+---
+
 Usage
 ```cs
 var graph = new Graph<int>();
@@ -94,7 +100,6 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 ```
 
 ## Sorting
----
 
 To run the benchmarks for all sorting algorithms:
 ```
@@ -102,6 +107,8 @@ To run the benchmarks for all sorting algorithms:
 ```
 
 ### Bubble Sort
+---
+
 Usage
 ```cs
 List<int> result = new[] { 5, 4, 3, 2, 1 }.BubbleSort();
@@ -115,6 +122,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 ```
 
 ### Insertion Sort
+---
+
 Usage
 ```cs
 List<int> result = new[] { 5, 4, 3, 2, 1 }.InsertionSort();
@@ -128,6 +137,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 ```
 
 ### Merge Sort
+---
+
 Usage
 ```cs
 List<int> result = new[] { 5, 4, 3, 2, 1 }.MergeSort();
@@ -141,6 +152,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 ```
 
 ### Quick Sort
+---
+
 Usage
 ```cs
 List<int> result = new[] { 5, 4, 3, 2, 1 }.QuickSort();
