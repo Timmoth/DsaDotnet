@@ -2,13 +2,16 @@
 
 namespace DsaDotnet;
 
-public class Fibonacci
+public static partial class Series
 {
-    public static ulong Compute(int input)
+    public static ulong Fibonacci(this int input)
     {
         if (input <= 1)
         {
-            if (input < 0) throw new ArgumentException("Cannot calculate the fibonacci of a negative number");
+            if (input < 0)
+            {
+                throw new ArgumentException("Cannot calculate the fibonacci of a negative number");
+            }
 
             return (ulong)input;
         }
@@ -22,7 +25,10 @@ public class Fibonacci
             a = c;
             b = d;
             if ((n & (1 << i)) == 0)
+            {
                 continue;
+            }
+
             var temp = a + b;
             a = b;
             b = temp;

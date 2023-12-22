@@ -1,7 +1,7 @@
-using DsaDotnet;
+﻿using DsaDotnet;
 using FluentAssertions;
 
-namespace Tests;
+namespace Tests.Series;
 
 public class FibonacciTests
 {
@@ -20,9 +20,18 @@ public class FibonacciTests
         // Arrange
 
         // Act
-        var result = Fibonacci.Compute(n);
+        var result = n.Fibonacci();
 
         // Assert
         result.Should().Be(expected);
+    }
+
+    [Fact]
+    public void Fibonacci_MinusOne_Throws_ArgumentException()
+    {
+        // Arrange
+        // Act
+        // Assert
+        Assert.Throws<ArgumentException>(() => (-1).Fibonacci());
     }
 }
