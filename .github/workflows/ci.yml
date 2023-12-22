@@ -1,0 +1,64 @@
+name: CI
+on:
+  workflow_dispatch:
+  pull_request:
+
+permissions:
+  contents: write
+  deployments: write
+
+jobs:
+  test:
+    name: Run Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'
+      
+      - name: Run Tests
+        run: dotnet test --configuration Release
+        working-directory: ./Tests
+
+  benchmark:
+    name: Run Benchmarks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Run benchmark
+        working-directory: ./Benchmarks
+        run: dotnet run -c Release --exporters json --filter '*' --memory --join
+        
+      - name: Get benchmark file name
+        id: benchmarkfilename
+        working-directory: ./Benchmarks/BenchmarkDotNet.Artifacts/results
+        run: |
+          filePath=$(find . -type f -name 'BenchmarkRun-joined-*-report-full-compressed.json' | rev | cut -d '/' -f1 | rev)
+          echo $filePath
+          echo "::set-output name=file::$filePath"
+          
+      - name: Store benchmark result
+        uses: rhysd/github-action-benchmark@v1
+        with:
+          name: Benchmark.Net Benchmark
+          tool: 'benchmarkdotnet'
+          output-file-path: Benchmarks/BenchmarkDotNet.Artifacts/results/${{ steps.benchmarkfilename.outputs.file }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          auto-push: true
+          alert-threshold: '200%'
+          comment-on-alert: true
+          fail-on-alert: true
+          alert-comment-cc-users: '@timmoth'
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Benchmark
+          path: Benchmark/BenchmarkDotNet.Artifacts/results/    
