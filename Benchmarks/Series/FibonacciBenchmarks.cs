@@ -1,15 +1,16 @@
 ﻿using BenchmarkDotNet.Attributes;
 using DsaDotnet;
 
-namespace Benchmarks;
+namespace Benchmarks.Series;
 
 public class FibonacciBenchmarks
 {
     [Params(10, 100, 1000, 10000)] public int N { get; set; }
 
     [Benchmark]
-    public ulong Fib()
+    [BenchmarkCategory("Series")]
+    public void Fib()
     {
-        return Fibonacci.Compute(N);
+        N.Fibonacci();
     }
 }
