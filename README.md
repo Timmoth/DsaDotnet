@@ -24,7 +24,9 @@ var result = Fibonacci.Compute(1000);
 ```
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Fibonacci*
 ```
-| Method         | Mean       | Error     | StdDev    | Allocated |
-|--------------- |-----------:|----------:|----------:|----------:|
-| FibonacciLarge | 26.4115 ns | 0.3041 ns | 0.0167 ns |         - |
-| FibonacciSmall |  0.0050 ns | 0.0563 ns | 0.0031 ns |         - |
+| Method   | Mean      | Error     | StdDev    | Allocated |
+|--------- |----------:|----------:|----------:|----------:|
+| Fib10    |  3.447 ns | 1.3431 ns | 0.0736 ns |         - |
+| Fib100   |  6.783 ns | 0.6839 ns | 0.0375 ns |         - |
+| Fib1000  |  9.954 ns | 8.7206 ns | 0.4780 ns |         - |
+| Fib10000 | 14.157 ns | 0.6288 ns | 0.0345 ns |         - |
