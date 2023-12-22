@@ -5,7 +5,7 @@ namespace Benchmarks.Series;
 
 public class PrimesBenchmarks
 {
-    [Params(10, 100, 1000, 10000)] public int N { get; set; }
+    [Params(1000, 10000)] public int N { get; set; }
 
     [Benchmark]
     [BenchmarkCategory("Series")]

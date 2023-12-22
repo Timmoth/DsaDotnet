@@ -9,7 +9,7 @@ public class BubbleSortBenchmarks
     private int[] _descendingOrder = null!;
     private int[] _randomOrder = null!;
 
-    [Params(100, 1000, 10000)] public int N { get; set; }
+    [Params(1000, 10000)] public int N { get; set; }
 
     [IterationSetup]
     public void Setup()
