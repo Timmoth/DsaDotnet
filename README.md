@@ -45,7 +45,7 @@ To run the benchmarks for all sorting algorithms:
 
 Usage
 ```cs
-ulong result = Series.Factorial(1000)
+ulong result = Series.Factorial(1000);
 result = 1000.Factorial();
 ```
 Benchmarks
@@ -58,7 +58,7 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 
 Usage
 ```cs
-ulong result = Series.Fibonacci(1000)
+ulong result = Series.Fibonacci(1000);
 result = 1000.Fibonacci();
 ```
 Benchmarks
@@ -71,7 +71,7 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 
 Usage
 ```cs
-List<int> result = Series.PrimesUpTo(1000)
+List<int> result = Series.PrimesUpTo(1000);
 result = 1000.PrimesUpTo();
 ```
 Benchmarks
@@ -92,11 +92,25 @@ Usage
 ```cs
 var graph = new Graph<int>();
 graph.AddEdges((0, 1), (1, 2), (2, 3));
-var path = graph.BreadthFirstSearch(0, n => n == 3);
+var node = graph.BreadthFirstSearch(0, n => n == 3);
 ```
 Benchmarks
 ```
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Bfs*
+```
+
+### Depth first search
+---
+
+Usage
+```cs
+var graph = new Graph<int>();
+graph.AddEdges((0, 1), (1, 2), (2, 3));
+var node = graph.DepthFirstSearch(0, n => n == 3);
+```
+Benchmarks
+```
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Dfs*
 ```
 
 ## Sorting

@@ -3,11 +3,11 @@ using FluentAssertions;
 
 namespace Tests.Graphs;
 
-public class BfsTests
+public class DfsTests
 {
     [Theory]
     [ClassData(typeof(GraphSearchTestData))]
-    public void Bfs_Finds_ShortestPath_From_Source_To_Destination((int a, int b)[] edges, Predicate<int> predicate,
+    public void Dfs_Finds_ShortestPath_From_Source_To_Destination((int a, int b)[] edges, Predicate<int> predicate,
         int start, int? expected)
     {
         // Arrange
@@ -15,7 +15,7 @@ public class BfsTests
         graph.AddEdges(edges);
 
         // Act
-        var node = graph.BreadthFirstSearch(start, predicate);
+        var node = graph.DepthFirstSearch(start, predicate);
 
         // Assert
         node?.Data.Should().Be(expected);
