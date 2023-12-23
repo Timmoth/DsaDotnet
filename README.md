@@ -193,3 +193,22 @@ Benchmarks
 ```console
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *QuickSort*
 ```
+
+## Arithmetic Algorithms
+
+### Greatest Common Divisor
+---
+
+Usage
+```cs
+var result = Arithmetic.GCD(10, 20);
+```
+
+### Least Common Multiple
+---
+
+Usage
+```cs
+var result = Arithmetic.LCM(10, 20);
+result = Arithmetic.LCM(10, 20, 30);
+```
