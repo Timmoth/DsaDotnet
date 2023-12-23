@@ -7,17 +7,18 @@ public class DfsTests
 {
     [Theory]
     [ClassData(typeof(GraphSearchTestData))]
-    public void Dfs_Finds_ShortestPath_From_Source_To_Destination((int a, int b)[] edges, Predicate<int> predicate,
+    public void Dfs_Finds_ShortestPath_From_Source_To_Destination((int a, int b)[] edges,
+        Predicate<Node<int>> predicate,
         int start, int? expected)
     {
         // Arrange
-        var graph = new Graph<int>();
+        var graph = new UnWeightedGraph<int>();
         graph.AddEdges(edges);
 
         // Act
         var node = graph.DepthFirstSearch(start, predicate);
 
         // Assert
-        node?.Data.Should().Be(expected);
+        node?.Key.Should().Be(expected);
     }
 }

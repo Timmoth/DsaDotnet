@@ -90,9 +90,9 @@ To run the benchmarks for all graph algorithms:
 
 Usage
 ```cs
-var graph = new Graph<int>();
+var graph = new UnWeightedGraph<int>();
 graph.AddEdges((0, 1), (1, 2), (2, 3));
-var node = graph.BreadthFirstSearch(0, n => n == 3);
+var node = graph.BreadthFirstSearch(0, n => n.Key == 3);
 ```
 Benchmarks
 ```
@@ -104,9 +104,9 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 
 Usage
 ```cs
-var graph = new Graph<int>();
+var graph = new UnWeightedGraph<int>();
 graph.AddEdges((0, 1), (1, 2), (2, 3));
-var node = graph.DepthFirstSearch(0, n => n == 3);
+var node = graph.DepthFirstSearch(0, n => n.Key == 3);
 ```
 Benchmarks
 ```
@@ -118,9 +118,9 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 
 Usage
 ```cs
-var graph = new Graph<int>();
+var graph = new WeightedGraph<int>();
 graph.AddEdges((0, 1), (1, 2), (2, 3));
-var path = graph.Dijkstra(0, n => n == 3);
+var path = graph.Dijkstra(0, n => n.Key == 3);
 ```
 Benchmarks
 ```

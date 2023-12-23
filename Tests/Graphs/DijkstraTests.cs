@@ -7,11 +7,12 @@ public class DijkstraTests
 {
     [Theory]
     [ClassData(typeof(ShortestPathSearchTestData))]
-    public void Dijkstra_Finds_ShortestPath_From_Source_To_Destination((int a, int b)[] edges, Predicate<int> predicate,
+    public void Dijkstra_Finds_ShortestPath_From_Source_To_Destination((int a, int b)[] edges,
+        Predicate<WeightedNode<int>> predicate,
         int start, int[]? expected)
     {
         // Arrange
-        var graph = new Graph<int>();
+        var graph = new WeightedGraph<int>();
         graph.AddEdges(edges, 1);
 
         // Act
@@ -24,7 +25,7 @@ public class DijkstraTests
         }
         else
         {
-            path!.Select(n => n.Data).Should().Equal(expected);
+            path!.Select(n => n.Key).Should().Equal(expected);
         }
     }
 }
