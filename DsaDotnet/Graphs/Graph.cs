@@ -20,22 +20,61 @@ public class Graph<T> where T : notnull
         }
     }
 
+
+    public void AddEdges((T source, T destination)[] edges, int weight)
+    {
+        for (var i = 0; i < edges.Length; i++)
+        {
+            var (source, destination) = edges[i];
+            if (!Nodes.ContainsKey(source))
+            {
+                Nodes[source] = new Node<T>(source);
+            }
+
+            if (!Nodes.ContainsKey(destination))
+            {
+                Nodes[destination] = new Node<T>(destination);
+            }
+
+            Nodes[source].Neighbors[Nodes[destination]] = weight;
+        }
+    }
+
     public void AddEdges(params (T source, T destination)[] edges)
     {
         for (var i = 0; i < edges.Length; i++)
         {
-            var edge = edges[i];
-            if (!Nodes.ContainsKey(edge.source))
+            var (source, destination) = edges[i];
+            if (!Nodes.ContainsKey(source))
             {
-                Nodes[edge.source] = new Node<T>(edge.source);
+                Nodes[source] = new Node<T>(source);
             }
 
-            if (!Nodes.ContainsKey(edge.destination))
+            if (!Nodes.ContainsKey(destination))
             {
-                Nodes[edge.destination] = new Node<T>(edge.destination);
+                Nodes[destination] = new Node<T>(destination);
             }
 
-            Nodes[edge.source].Neighbors.Add(Nodes[edge.destination]);
+            Nodes[source].Neighbors[Nodes[destination]] = 0;
+        }
+    }
+
+    public void AddEdges(params (T source, T destination, int weight)[] edges)
+    {
+        for (var i = 0; i < edges.Length; i++)
+        {
+            var (source, destination, weight) = edges[i];
+            if (!Nodes.ContainsKey(source))
+            {
+                Nodes[source] = new Node<T>(source);
+            }
+
+            if (!Nodes.ContainsKey(destination))
+            {
+                Nodes[destination] = new Node<T>(destination);
+            }
+
+            Nodes[source].Neighbors[Nodes[destination]] = weight;
         }
     }
 }
