@@ -1,32 +1,181 @@
 # DsaDotnet
-A dotnet class library containing a collection of algorithms and datastructures
+A dotnet class library containing a collection of algorithms and datastructures.
 
-## Run the Benchmarks
-```
-dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short
+The objective of this library is to cement my understanding of datastructures & algorithms whilst also trying out some of dotnet 8' latest features.
+
+If you can think of a way to improve any of the existing implementations feel free to open a PR and see if you can beat my benchmarks!
+
+## Benchmarks
+
+Each push to main triggers the benchmarks to be ran and compared against the previous version, [you can see them here](https://timmoth.github.io/DsaDotnet/dev/bench/)
+
+Run all the benchmarks locally
+```console
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release --job short --filter '*' --memory --join
 ```
 
-## Run the Tests
+Run a specific set of benchmarks
+```console
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release --job short --memory --f *Fibonacci*
 ```
+
+## Tests
+All tests must pass before a PR can be merged into main.
+
+Run all the tests locally
+```console
 dotnet test
 ```
 
-## Fibonacci
-
-### Usage
-
+I use [Stryker mutation testing](https://github.com/stryker-mutator/stryker-net) to help identify missing tests
+```console
+dotnet tool install --global dotnet-stryker
+dotnet-stryker
 ```
-var result = Fibonacci.Compute(1000);
+Running Stryker will output a report outlining which mutations (essentially bugs) were introduced into your code that did not cause any tests to fail.
+
+## Sequence and Series Algorithms
+To run the benchmarks for all sorting algorithms:
+```console
+ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Series --join
 ```
 
-### Benchmarks
+### Factorial
+---
 
+Usage
+```cs
+ulong result = Series.Factorial(1000);
+result = 1000.Factorial();
+```
+Benchmarks
+```
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Factorial*
+```
+
+### Fibonacci
+---
+
+Usage
+```cs
+ulong result = Series.Fibonacci(1000);
+result = 1000.Fibonacci();
+```
+Benchmarks
 ```
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Fibonacci*
 ```
-| Method   | Mean      | Error     | StdDev    | Allocated |
-|--------- |----------:|----------:|----------:|----------:|
-| Fib10    |  3.447 ns | 1.3431 ns | 0.0736 ns |         - |
-| Fib100   |  6.783 ns | 0.6839 ns | 0.0375 ns |         - |
-| Fib1000  |  9.954 ns | 8.7206 ns | 0.4780 ns |         - |
-| Fib10000 | 14.157 ns | 0.6288 ns | 0.0345 ns |         - |
+
+### Primes
+---
+
+Usage
+```cs
+List<int> result = Series.PrimesUpTo(1000);
+result = 1000.PrimesUpTo();
+```
+Benchmarks
+```console
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Primes*
+```
+
+## Graphs
+To run the benchmarks for all graph algorithms:
+```console
+ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Graph --join
+```
+
+### Breadth first search
+---
+
+Usage
+```cs
+var graph = new Graph<int>();
+graph.AddEdges((0, 1), (1, 2), (2, 3));
+var node = graph.BreadthFirstSearch(0, n => n == 3);
+```
+Benchmarks
+```
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Bfs*
+```
+
+### Depth first search
+---
+
+Usage
+```cs
+var graph = new Graph<int>();
+graph.AddEdges((0, 1), (1, 2), (2, 3));
+var node = graph.DepthFirstSearch(0, n => n == 3);
+```
+Benchmarks
+```
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Dfs*
+```
+
+## Sorting
+
+To run the benchmarks for all sorting algorithms:
+```
+ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Sorting --join
+```
+
+### Bubble Sort
+---
+
+Usage
+```cs
+List<int> result = new[] { 5, 4, 3, 2, 1 }.BubbleSort();
+
+int[] input = new[] { 5, 4, 3, 2, 1 };
+input.BubbleSortInPlace();
+```
+Benchmarks
+```console
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *BubbleSort*
+```
+
+### Insertion Sort
+---
+
+Usage
+```cs
+List<int> result = new[] { 5, 4, 3, 2, 1 }.InsertionSort();
+
+int[] input = new[] { 5, 4, 3, 2, 1 };
+input.InsertionSort();
+```
+Benchmarks
+```console
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *InsertionSort*
+```
+
+### Merge Sort
+---
+
+Usage
+```cs
+List<int> result = new[] { 5, 4, 3, 2, 1 }.MergeSort();
+
+int[] input = new[] { 5, 4, 3, 2, 1 };
+input.MergeSort();
+```
+Benchmarks
+```console
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *MergeSort*
+```
+
+### Quick Sort
+---
+
+Usage
+```cs
+List<int> result = new[] { 5, 4, 3, 2, 1 }.QuickSort();
+
+int[] input = new[] { 5, 4, 3, 2, 1 };
+input.QuickSort();
+```
+Benchmarks
+```console
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *QuickSort*
+```
