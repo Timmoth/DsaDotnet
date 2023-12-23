@@ -1,80 +1,77 @@
 ﻿namespace DsaDotnet.Graphs;
 
-public class Graph<T> where T : notnull
+public abstract class Graph<T, U> where U : IEquatable<U> where T : INode<T, U>
 {
-    internal readonly Dictionary<T, Node<T>> Nodes = new();
+    internal readonly Dictionary<U, T> Nodes = new();
 
-    public void AddNodes(params T[] data)
+    public void AddNodes(params T[] nodes)
     {
-        for (var i = 0; i < data.Length; i++)
+        for (var i = 0; i < nodes.Length; i++)
         {
-            Nodes[data[i]] = new Node<T>(data[i]);
+            Nodes[nodes[i].Key] = nodes[i];
         }
     }
+}
 
-    public void AddNodes(params Node<T>[] nodes)
-    {
-        foreach (var node in nodes)
-        {
-            Nodes[node.Data] = node;
-        }
-    }
-
-
-    public void AddEdges((T source, T destination)[] edges, int weight)
+public class UnWeightedGraph<U> : Graph<Node<U>, U> where U : IEquatable<U>
+{
+    public void AddEdges((U source, U destination)[] edges)
     {
         for (var i = 0; i < edges.Length; i++)
         {
             var (source, destination) = edges[i];
-            if (!Nodes.ContainsKey(source))
+            if (!Nodes.TryGetValue(source, out var sourceNode))
             {
-                Nodes[source] = new Node<T>(source);
+                sourceNode = Nodes[source] = new Node<U> { Key = source };
             }
 
-            if (!Nodes.ContainsKey(destination))
+            if (!Nodes.TryGetValue(destination, out var destinationNode))
             {
-                Nodes[destination] = new Node<T>(destination);
+                destinationNode = Nodes[destination] = new Node<U> { Key = destination };
             }
 
-            Nodes[source].Neighbors[Nodes[destination]] = weight;
+            sourceNode.AddNeighbor(destinationNode);
         }
     }
+}
 
-    public void AddEdges(params (T source, T destination)[] edges)
+public class WeightedGraph<U> : Graph<WeightedNode<U>, U> where U : IEquatable<U>
+{
+    public void AddEdges((U source, U destination)[] edges, int weight)
     {
         for (var i = 0; i < edges.Length; i++)
         {
             var (source, destination) = edges[i];
-            if (!Nodes.ContainsKey(source))
+            if (!Nodes.TryGetValue(source, out var sourceNode))
             {
-                Nodes[source] = new Node<T>(source);
+                sourceNode = Nodes[source] = new WeightedNode<U> { Key = source };
             }
 
-            if (!Nodes.ContainsKey(destination))
+            if (!Nodes.TryGetValue(destination, out var destinationNode))
             {
-                Nodes[destination] = new Node<T>(destination);
+                destinationNode = Nodes[destination] = new WeightedNode<U> { Key = destination };
             }
 
-            Nodes[source].Neighbors[Nodes[destination]] = 0;
+            sourceNode.AddNeighbor(destinationNode, weight);
         }
     }
 
-    public void AddEdges(params (T source, T destination, int weight)[] edges)
+    public void AddEdges((U source, U destination, int weight)[] edges)
     {
         for (var i = 0; i < edges.Length; i++)
         {
             var (source, destination, weight) = edges[i];
-            if (!Nodes.ContainsKey(source))
+            if (!Nodes.TryGetValue(source, out var sourceNode))
             {
-                Nodes[source] = new Node<T>(source);
+                sourceNode = Nodes[source] = new WeightedNode<U> { Key = source };
             }
 
-            if (!Nodes.ContainsKey(destination))
+            if (!Nodes.TryGetValue(destination, out var destinationNode))
             {
-                Nodes[destination] = new Node<T>(destination);
+                destinationNode = Nodes[destination] = new WeightedNode<U> { Key = destination };
             }
 
-            Nodes[source].Neighbors[Nodes[destination]] = weight;
+            sourceNode.AddNeighbor(destinationNode, weight);
         }
     }
 }

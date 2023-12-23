@@ -2,43 +2,44 @@
 
 public static partial class Traversal
 {
-    public static Node<T>? DepthFirstSearch<T>(this Graph<T> graph, T start, Predicate<T> predicate) where T : notnull
+    public static T? DepthFirstSearch<T, U>(this Graph<T, U> graph, U start, Predicate<T> predicate)
+        where U : IEquatable<U> where T : class?, INode<T, U>
     {
-        if (!graph.Nodes.ContainsKey(start))
+        if (!graph.Nodes.TryGetValue(start, out var startNode))
         {
             throw new ArgumentException("Start node does not exist in the graph.");
         }
 
-        var visited = new HashSet<T>();
-        var stack = new Stack<Node<T>>();
-
-        var startNode = graph.Nodes[start];
-        stack.Push(startNode);
-        visited.Add(start);
-
-        if (predicate(startNode.Data))
+        if (predicate(startNode))
         {
+            // Start node matches predicate, exit early
             return startNode;
         }
+
+        var visited = new HashSet<T>();
+        var stack = new Stack<T>();
+
+        stack.Push(startNode);
+        visited.Add(startNode);
 
         while (stack.Count > 0)
         {
             var currentNode = stack.Pop();
 
-            foreach (var neighbor in currentNode.Neighbors.Keys)
+            foreach (var neighbor in currentNode.GetNeighbors())
             {
-                if (visited.Contains(neighbor.Data))
+                if (visited.Contains(neighbor))
                 {
                     continue;
                 }
 
-                if (predicate(neighbor.Data))
+                if (predicate(neighbor))
                 {
                     return neighbor;
                 }
 
                 stack.Push(neighbor);
-                visited.Add(neighbor.Data);
+                visited.Add(neighbor);
             }
         }
 

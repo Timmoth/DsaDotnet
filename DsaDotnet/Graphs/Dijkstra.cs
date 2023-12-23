@@ -2,74 +2,80 @@
 
 public static partial class Traversal
 {
-    public static ICollection<Node<T>>? Dijkstra<T>(this Graph<T> graph, T start, Predicate<T> predicate) where T : notnull
+    public static ICollection<WeightedNode<U>>? Dijkstra<U>(this WeightedGraph<U> graph, U start,
+        Predicate<WeightedNode<U>> predicate)
+        where U : IEquatable<U>
     {
-        if (!graph.Nodes.ContainsKey(start))
+        if (!graph.Nodes.TryGetValue(start, out var startNode))
         {
             throw new ArgumentException("Start node does not exist in the graph.");
         }
 
-        var startNode = graph.Nodes[start];
-
-        if (predicate(startNode.Data))
+        if (predicate(startNode))
         {
-            return new List<Node<T>>() { startNode };
+            // Start node matches predicate, exit early.
+            return new List<WeightedNode<U>> { startNode };
         }
-        var distances = new Dictionary<Node<T>, int>();
-        var previous = new Dictionary<Node<T>, Node<T>>();
-        var priorityQueue = new SortedDictionary<int, Node<T>>(); // Stores nodes by distance
 
+        var distances = new Dictionary<WeightedNode<U>, int>();
+        var previous = new Dictionary<WeightedNode<U>, WeightedNode<U>>();
+        var priorityQueue = new SortedDictionary<int, WeightedNode<U>>(); // Stores nodes by distance
+
+        WeightedNode<U>? endNode = null;
+        // Set distance to each node as the maximum
         foreach (var node in graph.Nodes.Values)
         {
             distances[node] = int.MaxValue;
+            if (endNode == null && predicate(node))
+            {
+                endNode = node;
+            }
         }
 
-        distances[graph.Nodes[start]] = 0;
-        priorityQueue[0] = graph.Nodes[start];
+        // If no node satisfies the predicate, return null
+        if (endNode == null)
+        {
+            return null;
+        }
+
+        // Distance to the start node is 0.
+        distances[startNode] = 0;
+        priorityQueue[0] = startNode;
 
         while (priorityQueue.Count > 0)
         {
-            var current = priorityQueue.First().Value;
-            priorityQueue.Remove(priorityQueue.First().Key);
+            var current = priorityQueue.First();
+            priorityQueue.Remove(current.Key);
 
-            foreach (var neighbor in current.Neighbors)
+            foreach (var (weight, neighbor) in current.Value.GetWeightedNeighbors())
             {
-                var newDistance = distances[current] + neighbor.Value;
-                if (newDistance >= distances[neighbor.Key])
+                var newDistance = distances[current.Value] + weight;
+                if (newDistance >= distances[neighbor])
                 {
                     continue;
                 }
 
-                distances[neighbor.Key] = newDistance;
-                previous[neighbor.Key] = current;
-                priorityQueue[newDistance] = neighbor.Key;
+                distances[neighbor] = newDistance;
+                previous[neighbor] = current.Value;
+                priorityQueue[newDistance] = neighbor;
             }
         }
 
-        Node<T>? endNode = null;
-        foreach (var node in graph.Nodes.Values)
+        // If no end node is un-reachable return null
+        if (distances[endNode] == int.MaxValue)
         {
-            if (!predicate(node.Data))
-            {
-                continue;
-            }
-
-            endNode = node;
-            break;
-        }
-
-        // If no node satisfies the predicate, return null
-        if (endNode == null || distances[endNode] == int.MaxValue)
             return null;
+        }
 
         // Reconstruct the shortest path
-        var shortestPath = new List<Node<T>>();
+        var shortestPath = new List<WeightedNode<U>>();
         var c = endNode;
         while (c != null)
         {
             shortestPath.Add(c);
-            c = previous.ContainsKey(c) ? previous[c] : null;
+            previous.TryGetValue(c, out c);
         }
+
         shortestPath.Reverse();
 
         return shortestPath;
