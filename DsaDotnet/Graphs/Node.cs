@@ -29,31 +29,23 @@ public class Node<T> : INode<Node<T>, T> where T : IEquatable<T>
 
 public class WeightedNode<T> : INode<WeightedNode<T>, T> where T : IEquatable<T>
 {
-    private readonly SortedList<int, List<WeightedNode<T>>> _sortedNeighbors = new();
-    private readonly List<WeightedNode<T>> _unsortedNeighbors = new();
+    private readonly List<(int, WeightedNode<T>)> _weightedNeighbors = new();
+    private readonly List<WeightedNode<T>> _neighbors = new();
     public required T Key { get; set; }
 
     public IReadOnlyList<WeightedNode<T>> GetNeighbors()
     {
-        return _unsortedNeighbors;
+        return _neighbors;
     }
 
-    public IReadOnlyCollection<KeyValuePair<int, WeightedNode<T>>> GetWeightedNeighbors()
+    public IReadOnlyCollection<(int, WeightedNode<T>)> GetWeightedNeighbors()
     {
-        return _sortedNeighbors
-            .SelectMany((w, n) => w.Value.Select(v => new KeyValuePair<int, WeightedNode<T>>(w.Key, v))).ToList();
+        return _weightedNeighbors;
     }
 
     public void AddNeighbor(WeightedNode<T> neighbor, int weight)
     {
-        _unsortedNeighbors.Add(neighbor);
-        if (_sortedNeighbors.TryGetValue(weight, out var neighbors))
-        {
-            neighbors.Add(neighbor);
-        }
-        else
-        {
-            _sortedNeighbors.Add(weight, new List<WeightedNode<T>> { neighbor });
-        }
+        _neighbors.Add(neighbor);
+        _weightedNeighbors.Add((weight, neighbor));
     }
 }
