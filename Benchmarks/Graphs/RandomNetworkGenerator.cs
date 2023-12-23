@@ -35,9 +35,9 @@ public class RandomNetworkGenerator<T>
                 var randomNeighborIndex = _random.Next(nodes.Count);
                 var connectedNode = nodes[randomNeighborIndex];
 
-                if (node != connectedNode && !node.Neighbors.Contains(connectedNode))
+                if (node != connectedNode && !node.Neighbors.ContainsKey(connectedNode))
                 {
-                    node.Neighbors.Add(connectedNode);
+                    node.Neighbors.Add(connectedNode, 1);
                 }
             }
         }

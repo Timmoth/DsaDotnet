@@ -26,7 +26,7 @@ public static partial class Traversal
         {
             var currentNode = queue.Dequeue();
 
-            foreach (var neighbor in currentNode.Neighbors)
+            foreach (var neighbor in currentNode.Neighbors.Keys)
             {
                 if (visited.Contains(neighbor.Data))
                 {
