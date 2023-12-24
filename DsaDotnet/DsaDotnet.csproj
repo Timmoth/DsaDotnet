@@ -15,7 +15,6 @@
     <Description>
       A collection of dotnet data structures and algorithms
     </Description>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>DSA</PackageTags>
     <Copyright>Tim Jones</Copyright>
     <PackageProjectUrl>https://github.com/Timmoth/DsaDotnet</PackageProjectUrl>
