@@ -103,10 +103,38 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Primes*
 ```
 
-## Graphs
-To run the benchmarks for all graph algorithms:
+## Search
+To run the benchmarks for all search algorithms:
 ```console
- dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Graph --join
+ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Search --join
+```
+
+### Linear Search
+---
+
+Iterate through each element sequentially from the start until the end until the desired element is found.
+
+Usage
+```cs
+var index = new []{ 1, 2, 3}.LinearSearch(2);
+```
+Benchmarks
+```
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *LinearSearch*
+```
+
+### Binary Search
+---
+
+Find a value within a sorted array by dividing the search interval in half at each step.
+
+Usage
+```cs
+var index = new []{ 1, 2, 3}.BinarySearch(2);
+```
+Benchmarks
+```
+dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *BinarySearch*
 ```
 
 ### Breadth first search

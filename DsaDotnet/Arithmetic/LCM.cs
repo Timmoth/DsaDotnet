@@ -9,7 +9,7 @@ public static partial class Arithmetic
             return 0;
         }
 
-        return Math.Abs((a * b) / GCD(a, b));
+        return Math.Abs(a * b / GCD(a, b));
     }
 
     public static int LCM(params int[] arr)
@@ -29,6 +29,7 @@ public static partial class Arithmetic
         {
             lcm = LCM(lcm, arr[i]);
         }
+
         return lcm;
     }
 }

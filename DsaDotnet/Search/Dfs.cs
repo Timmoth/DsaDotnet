@@ -1,6 +1,8 @@
-﻿namespace DsaDotnet.Graphs;
+﻿using DsaDotnet.Graphs;
 
-public static partial class Traversal
+namespace DsaDotnet;
+
+public static partial class Search
 {
     public static T? DepthFirstSearch<T, U>(this Graph<T, U> graph, U start, Predicate<T> predicate)
         where U : IEquatable<U> where T : class?, INode<T, U>

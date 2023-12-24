@@ -1,7 +1,8 @@
-﻿using DsaDotnet.Graphs;
+﻿using DsaDotnet;
+using DsaDotnet.Graphs;
 using FluentAssertions;
 
-namespace Tests.Graphs;
+namespace Tests.Search;
 
 public class DijkstraTests
 {

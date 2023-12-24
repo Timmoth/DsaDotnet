@@ -1,9 +1,10 @@
 ﻿using BenchmarkDotNet.Attributes;
+using DsaDotnet;
 using DsaDotnet.Graphs;
 
-namespace Benchmarks.Graphs;
+namespace Benchmarks.Search;
 
-public class BfsBenchmarks
+public class DfsBenchmarks
 {
     private static readonly RandomUnweightedNetworkGenerator<int> _randomNetworkGenerator = new();
     private UnWeightedGraph<int> _graph = null!;
@@ -17,10 +18,10 @@ public class BfsBenchmarks
     }
 
     [Benchmark]
-    [BenchmarkCategory("Graph")]
+    [BenchmarkCategory("Search")]
     public void Bfs()
     {
-        _graph.BreadthFirstSearch(0, i => i.Key == N - 1);
+        _graph.DepthFirstSearch(0, i => i.Key == N - 1);
     }
 
     [IterationCleanup]

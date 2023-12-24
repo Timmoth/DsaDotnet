@@ -1,6 +1,6 @@
 ﻿using DsaDotnet.Graphs;
 
-namespace Benchmarks.Graphs;
+namespace Benchmarks.Search;
 
 public class RandomUnweightedNetworkGenerator<T> where T : IEquatable<T>
 {

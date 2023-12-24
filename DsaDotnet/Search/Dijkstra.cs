@@ -1,6 +1,8 @@
-﻿namespace DsaDotnet.Graphs;
+﻿using DsaDotnet.Graphs;
 
-public static partial class Traversal
+namespace DsaDotnet;
+
+public static partial class Search
 {
     public static ICollection<WeightedNode<U>>? Dijkstra<U>(this WeightedGraph<U> graph, U start,
         Predicate<WeightedNode<U>> predicate)

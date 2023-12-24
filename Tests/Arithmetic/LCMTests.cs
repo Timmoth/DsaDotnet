@@ -23,14 +23,14 @@ public class LCMTests
     }
 
     [Theory]
-    [InlineData(new int[] { 3, 5 }, 15)]
-    [InlineData(new int[] { 7, 11, 13 }, 1001)]
-    [InlineData(new int[] { 2, 4, 8 }, 8)]
-    [InlineData(new int[] { 3, 6, 9, 12 }, 36)]
-    [InlineData(new int[] { 5, 10, 15, 20, 25 }, 300)]
-    [InlineData(new int[] { 0, 5, 10 }, 0)]
-    [InlineData(new int[] { -3, -6, -9, -12 }, 36)]
-    [InlineData(new int[] { -4, -8, 16, -32 }, 32)]
+    [InlineData(new[] { 3, 5 }, 15)]
+    [InlineData(new[] { 7, 11, 13 }, 1001)]
+    [InlineData(new[] { 2, 4, 8 }, 8)]
+    [InlineData(new[] { 3, 6, 9, 12 }, 36)]
+    [InlineData(new[] { 5, 10, 15, 20, 25 }, 300)]
+    [InlineData(new[] { 0, 5, 10 }, 0)]
+    [InlineData(new[] { -3, -6, -9, -12 }, 36)]
+    [InlineData(new[] { -4, -8, 16, -32 }, 32)]
     [InlineData(new int[] { }, 0)]
     public void LCM_Array_Returns_CorrectValue(int[] numbers, int expected)
     {
