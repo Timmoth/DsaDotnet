@@ -12,7 +12,7 @@ public class GraphNode<T> : IGraphNode<GraphNode<T>, T> where T : IEquatable<T>
 
     public void AddNeighbor(GraphNode<T> neighbor)
     {
-        if (_neighbors.Contains(neighbor))
+        if (_neighbors.Any(n => n.Key.Equals(neighbor.Key)))
         {
             return;
         }

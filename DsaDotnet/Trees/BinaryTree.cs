@@ -26,11 +26,6 @@
             }
         }
 
-        public void Insert(T key)
-        {
-            _root = InsertRec(_root, key);
-        }
-
         private TreeNode<T> InsertRec(TreeNode<T>? node, T key)
         {
             if (node == null)
