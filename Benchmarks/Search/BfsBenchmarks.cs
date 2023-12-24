@@ -14,7 +14,7 @@ public class BfsBenchmarks
     public void Setup()
     {
         _graph = new UnWeightedGraph<int>();
-        _graph.AddNodes(_randomNetworkGenerator.GenerateRandomNetwork(N, n => new Node<int> { Key = n }));
+        _graph.AddNodes(_randomNetworkGenerator.GenerateRandomNetwork(N, n => new GraphNode<int> { Key = n }));
     }
 
     [Benchmark]

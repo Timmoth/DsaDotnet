@@ -9,7 +9,7 @@ public class DijkstraTests
     [Theory]
     [ClassData(typeof(ShortestPathSearchTestData))]
     public void Dijkstra_Finds_ShortestPath_From_Source_To_Destination((int a, int b)[] edges,
-        Predicate<WeightedNode<int>> predicate,
+        Predicate<WeightedGraphNode<int>> predicate,
         int start, int[]? expected)
     {
         // Arrange

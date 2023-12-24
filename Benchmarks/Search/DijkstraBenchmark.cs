@@ -14,7 +14,7 @@ public class DijkstraBenchmark
     public void Setup()
     {
         _graph = new WeightedGraph<int>();
-        _graph.AddNodes(_randomNetworkGenerator.GenerateRandomNetwork(N, n => new WeightedNode<int> { Key = n }));
+        _graph.AddNodes(_randomNetworkGenerator.GenerateRandomNetwork(N, n => new WeightedGraphNode<int> { Key = n }));
     }
 
     [Benchmark]
