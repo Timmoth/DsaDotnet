@@ -5,7 +5,7 @@ The objective of this library is to cement my understanding of datastructures & 
 
 If you can think of a way to improve any of the existing implementations feel free to open a PR and see if you can beat my benchmarks!
 
-## Benchmarks
+## [Benchmarks](Benchmarks/)
 
 Each push to main triggers the benchmarks to be ran and compared against the previous version, [you can see them here](https://timmoth.github.io/DsaDotnet/dev/bench/)
 
@@ -19,7 +19,7 @@ Run a specific set of benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release --job short --memory --f *Fibonacci*
 ```
 
-## Tests
+## [Tests](Tests/)
 All tests must pass before a PR can be merged into main.
 
 Run all the tests locally
@@ -36,7 +36,7 @@ Running Stryker will output a report outlining which mutations (essentially bugs
 
 ## Data Structures
 
-### Binary Tree
+### [Binary Tree](DsaDotnet/Trees/BinaryTree.cs/)
 A hierarchical data structure composed of nodes. Each node can have a left and right child node where left node is less than and the right node is greater than the parent node.
 
 Usage
@@ -46,7 +46,7 @@ Usage
  var node = tree.Search(2);
 ```
 
-### Unweighted Graph
+### [Unweighted Graph](DsaDotnet/Graphs/UnWeightedGraph.cs)
 A collection of vertices connected by edges.
 
 Usage
@@ -55,7 +55,7 @@ Usage
  graph.AddEdges((0, 1), (1, 2), (2, 3));
 ```
 
-### Weighted Graph
+### [Weighted Graph](DsaDotnet/Graphs/WeightedGraph.cs)
 A collection of vertices connected by edges, where each edge has an associated weight.
 
 Usage
@@ -72,7 +72,7 @@ To run the benchmarks for all Sequence and Series algorithms:
  dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Series --join
 ```
 
-### Factorial
+### [Factorial](DsaDotnet/Series/Factorial.cs)
 ---
 Denoted by n!, the factorial of an unsigned integer is the product of all integers less then or equal to n.
 
@@ -95,7 +95,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Factorial*
 ```
 
-### Fibonacci
+### [Fibonacci](DsaDotnet/Series/Fibonacci.cs)
 ---
 A sequence where each term is the sum of the two preceding terms, starting with 0 and 1.
 
@@ -117,7 +117,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Fibonacci*
 ```
 
-### Primes
+### [Primes](DsaDotnet/Series/Primes.cs)
 ---
 Unsigned integers greater than 1 that have no positive divisors other than 1 and themselves.
 
@@ -141,7 +141,7 @@ To run the benchmarks for all search algorithms:
  dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Search --join
 ```
 
-### Linear Search
+### [Linear Search](DsaDotnet/Search/LinearSearch.cs)
 ---
 
 Iterate through each element sequentially from the start until the end until the desired element is found.
@@ -155,7 +155,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *LinearSearch*
 ```
 
-### Binary Search
+### [Binary Search](DsaDotnet/Search/BinarySearch.cs)
 ---
 
 Find a value within a sorted array by dividing the search interval in half at each step.
@@ -169,7 +169,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *BinarySearch*
 ```
 
-### Breadth first search
+### [Breadth First Search](DsaDotnet/Search/Bfs.cs)
 ---
 
 Explore all neighbor nodes at the present depth before moving on to nodes at the next depth level.
@@ -185,7 +185,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Bfs*
 ```
 
-### Depth first search
+### [Depth First Search](DsaDotnet/Search/Dfs.cs)
 ---
 
 Explore as far as possible along each branch before backtracking.
@@ -201,7 +201,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Dfs*
 ```
 
-### Dijkstra's
+### [Dijkstra's](DsaDotnet/Search/Dijkstra.cs)
 ---
 
 Find the shortest path between nodes in a graph with non-negative edge weights, by iteratively selecting the node with the minimum distance from the starting node and updating distances to adjacent nodes.
@@ -224,7 +224,7 @@ To run the benchmarks for all sorting algorithms:
  dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Sorting --join
 ```
 
-### Bubble Sort
+### [Bubble Sort](DsaDotnet/Sorting/Bubble.cs)
 ---
 
 Repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order, continuing until the list is sorted.
@@ -241,7 +241,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *BubbleSort*
 ```
 
-### Insertion Sort
+### [Insertion Sort](DsaDotnet/Sorting/Insertion.cs)
 ---
 
 Builds the final sorted list one item at a time, taking each element from the input list and inserting it into its correct position within the already sorted part of the list.
@@ -258,7 +258,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *InsertionSort*
 ```
 
-### Merge Sort
+### [Merge Sort](DsaDotnet/Sorting/Merge.cs)
 ---
 
 Divides the input list into smaller lists, sorts those smaller lists, and then merges them back together in a sorted manner.
@@ -275,7 +275,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *MergeSort*
 ```
 
-### Quick Sort
+### [Quick Sort](DsaDotnet/Sorting/Quick.cs)
 ---
 
 Uses a divide-and-conquer strategy by selecting a "pivot" element from the list and partitioning the other elements into two sub-lists according to whether they are less than or greater than the pivot. The sub-lists are then sorted recursively.
@@ -294,7 +294,7 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 
 ## Arithmetic Algorithms
 
-### Greatest Common Divisor
+### [Greatest Common Divisor](DsaDotnet/Arithmetic/GCD.cs)
 ---
 
 The largest positive integer that divides two or more numbers without leaving a remainder.
@@ -304,7 +304,7 @@ Usage
 var result = Arithmetic.GCD(10, 20);
 ```
 
-### Least Common Multiple
+### [Least Common Multiple](DsaDotnet/Arithmetic/LCM.cs)
 ---
 
 The smallest positive integer that is a multiple of two or more numbers.
