@@ -35,13 +35,23 @@ dotnet-stryker
 Running Stryker will output a report outlining which mutations (essentially bugs) were introduced into your code that did not cause any tests to fail.
 
 ## Sequence and Series Algorithms
-To run the benchmarks for all sorting algorithms:
+To run the benchmarks for all Sequence and Series algorithms:
 ```console
  dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Series --join
 ```
 
 ### Factorial
 ---
+Denoted by n!, the factorial of an unsigned integer is the product of all integers less then or equal to n.
+
+```
+n! = n * (n-1) * (n-2) * ... * 3 * 2 * 1
+
+0! = 1
+1! = 1
+2! = 2
+3! = 6
+```
 
 Usage
 ```cs
@@ -55,6 +65,15 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 
 ### Fibonacci
 ---
+A sequence where each term is the sum of the two preceding terms, starting with 0 and 1.
+
+```
+f(0) = 0
+f(1) = 1
+f(n) = f(n-1) + f(n-2)
+
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+```
 
 Usage
 ```cs
@@ -68,6 +87,11 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 
 ### Primes
 ---
+Unsigned integers greater than 1 that have no positive divisors other than 1 and themselves.
+
+```
+2, 3, 5, 7, 11, 13, 17, 19, 23, 29
+```
 
 Usage
 ```cs
@@ -88,6 +112,8 @@ To run the benchmarks for all graph algorithms:
 ### Breadth first search
 ---
 
+Explore all neighbor nodes at the present depth before moving on to nodes at the next depth level.
+
 Usage
 ```cs
 var graph = new UnWeightedGraph<int>();
@@ -102,6 +128,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 ### Depth first search
 ---
 
+Explore as far as possible along each branch before backtracking.
+
 Usage
 ```cs
 var graph = new UnWeightedGraph<int>();
@@ -115,6 +143,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 
 ### Dijkstra's
 ---
+
+Find the shortest path between nodes in a graph with non-negative edge weights, by iteratively selecting the node with the minimum distance from the starting node and updating distances to adjacent nodes.
 
 Usage
 ```cs
@@ -137,6 +167,8 @@ To run the benchmarks for all sorting algorithms:
 ### Bubble Sort
 ---
 
+Repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order, continuing until the list is sorted.
+
 Usage
 ```cs
 List<int> result = new[] { 5, 4, 3, 2, 1 }.BubbleSort();
@@ -151,6 +183,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 
 ### Insertion Sort
 ---
+
+Builds the final sorted list one item at a time, taking each element from the input list and inserting it into its correct position within the already sorted part of the list.
 
 Usage
 ```cs
@@ -167,6 +201,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 ### Merge Sort
 ---
 
+Divides the input list into smaller lists, sorts those smaller lists, and then merges them back together in a sorted manner.
+
 Usage
 ```cs
 List<int> result = new[] { 5, 4, 3, 2, 1 }.MergeSort();
@@ -181,6 +217,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 
 ### Quick Sort
 ---
+
+Uses a divide-and-conquer strategy by selecting a "pivot" element from the list and partitioning the other elements into two sub-lists according to whether they are less than or greater than the pivot. The sub-lists are then sorted recursively.
 
 Usage
 ```cs
@@ -199,6 +237,8 @@ dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --
 ### Greatest Common Divisor
 ---
 
+The largest positive integer that divides two or more numbers without leaving a remainder.
+
 Usage
 ```cs
 var result = Arithmetic.GCD(10, 20);
@@ -206,6 +246,8 @@ var result = Arithmetic.GCD(10, 20);
 
 ### Least Common Multiple
 ---
+
+The smallest positive integer that is a multiple of two or more numbers.
 
 Usage
 ```cs
