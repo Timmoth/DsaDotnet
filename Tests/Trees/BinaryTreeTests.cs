@@ -22,4 +22,6 @@ public class BinaryTreeTests
         // Assert
         node!.Key.Should().Be(searchKey);
     }
+
+
 }

@@ -2,7 +2,7 @@
 
 public class UnWeightedGraph<U> : Graph<GraphNode<U>, U> where U : IEquatable<U>
 {
-    public void AddEdges((U source, U destination)[] edges)
+    public void AddEdges(params (U source, U destination)[] edges)
     {
         for (var i = 0; i < edges.Length; i++)
         {

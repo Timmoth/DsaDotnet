@@ -11,4 +11,9 @@ public abstract class Graph<T, U> where U : IEquatable<U> where T : IGraphNode<T
             Nodes[nodes[i].Key] = nodes[i];
         }
     }
+
+    public IReadOnlyCollection<T> AllNodes()
+    {
+        return Nodes.Values;
+    }
 }
