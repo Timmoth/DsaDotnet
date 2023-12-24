@@ -7,6 +7,29 @@
     <LangVersion>preview</LangVersion>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>DsaDotnet</PackageId>
+    <Title>Dsa Dotnet</Title>
+    <Company>Timmoth</Company>
+    <Authors>Tim Jones</Authors>
+    <Description>
+      A collection of dotnet data structures and algorithms
+    </Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>DSA</PackageTags>
+    <Copyright>Tim Jones</Copyright>
+    <PackageProjectUrl>https://github.com/Timmoth/DsaDotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Timmoth/DsaDotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <MinVerTagPrefix>v</MinVerTagPrefix>
+    <EnablePackageValidation>true</EnablePackageValidation>
+    <GenerateCompatibilitySuppressionFile>true</GenerateCompatibilitySuppressionFile>
+    <PackageValidationBaselineVersion>1.0.0</PackageValidationBaselineVersion>
+  </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <Optimize>true</Optimize>
     <DebugType>none</DebugType>
