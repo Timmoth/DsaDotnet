@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1703455373565,
+  "lastUpdate": 1703455820909,
   "repoUrl": "https://github.com/Timmoth/DsaDotnet",
   "entries": {
     "Benchmark.Net Benchmark": [
@@ -3576,6 +3576,270 @@ window.BENCHMARK_DATA = {
             "value": 348728857.5,
             "unit": "ns",
             "range": "± 605820.1403978679"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "t.jones@timmoth.com",
+            "name": "timmoth",
+            "username": "Timmoth"
+          },
+          "committer": {
+            "email": "t.jones@timmoth.com",
+            "name": "timmoth",
+            "username": "Timmoth"
+          },
+          "distinct": true,
+          "id": "47a542c6aed4fd2bcdf4312eed7f42d42842e1b5",
+          "message": "updated stryker command",
+          "timestamp": "2023-12-24T22:05:11Z",
+          "tree_id": "45c8ad9aaa6b4de53007600de1620c01a23e5e83",
+          "url": "https://github.com/Timmoth/DsaDotnet/commit/47a542c6aed4fd2bcdf4312eed7f42d42842e1b5"
+        },
+        "date": 1703455820388,
+        "tool": "benchmarkdotnet",
+        "benches": [
+          {
+            "name": "Benchmarks.Search.BfsBenchmarks.Bfs(N: 100)",
+            "value": 137886.57777777777,
+            "unit": "ns",
+            "range": "± 36603.78454345937"
+          },
+          {
+            "name": "Benchmarks.Search.DfsBenchmarks.Bfs(N: 100)",
+            "value": 19395.737373737375,
+            "unit": "ns",
+            "range": "± 7980.377587591186"
+          },
+          {
+            "name": "Benchmarks.Search.DijkstraBenchmark.Dijkstra(N: 100)",
+            "value": 91485.9898989899,
+            "unit": "ns",
+            "range": "± 23602.38831891891"
+          },
+          {
+            "name": "Benchmarks.Search.BfsBenchmarks.Bfs(N: 1000)",
+            "value": 7758937.214285715,
+            "unit": "ns",
+            "range": "± 216853.06420235886"
+          },
+          {
+            "name": "Benchmarks.Search.BinarySearchBenchmarks.BinarySearch(N: 1000)",
+            "value": 1171.1470588235295,
+            "unit": "ns",
+            "range": "± 28.83344667324431"
+          },
+          {
+            "name": "Benchmarks.Search.DfsBenchmarks.Bfs(N: 1000)",
+            "value": 70364.16666666667,
+            "unit": "ns",
+            "range": "± 43564.83314390335"
+          },
+          {
+            "name": "Benchmarks.Search.DijkstraBenchmark.Dijkstra(N: 1000)",
+            "value": 379005.95652173914,
+            "unit": "ns",
+            "range": "± 57516.06391364909"
+          },
+          {
+            "name": "Benchmarks.Search.LinearSearchBenchmarks.LinearSearch(N: 1000)",
+            "value": 25932.602150537634,
+            "unit": "ns",
+            "range": "± 1536.5328215610807"
+          },
+          {
+            "name": "Benchmarks.Search.BinarySearchBenchmarks.BinarySearch(N: 10000)",
+            "value": 1702,
+            "unit": "ns",
+            "range": "± 368.06879297712317"
+          },
+          {
+            "name": "Benchmarks.Search.LinearSearchBenchmarks.LinearSearch(N: 10000)",
+            "value": 69735.86666666667,
+            "unit": "ns",
+            "range": "± 657.0142275766144"
+          },
+          {
+            "name": "Benchmarks.Series.FactorialBenchmarks.Fact(N: 100)",
+            "value": 2494.563910348075,
+            "unit": "ns",
+            "range": "± 11.648667364333456"
+          },
+          {
+            "name": "Benchmarks.Series.FactorialBenchmarks.Fact(N: 1000)",
+            "value": 160163.12278645832,
+            "unit": "ns",
+            "range": "± 981.1262388401957"
+          },
+          {
+            "name": "Benchmarks.Series.FibonacciBenchmarks.Fib(N: 1000)",
+            "value": 14.164755421025413,
+            "unit": "ns",
+            "range": "± 0.264513442763568"
+          },
+          {
+            "name": "Benchmarks.Series.PrimesBenchmarks.ComputePrimes(N: 1000)",
+            "value": 1546.9062016805012,
+            "unit": "ns",
+            "range": "± 15.178174656144071"
+          },
+          {
+            "name": "Benchmarks.Series.FibonacciBenchmarks.Fib(N: 10000)",
+            "value": 21.3122420946757,
+            "unit": "ns",
+            "range": "± 0.05819680531616547"
+          },
+          {
+            "name": "Benchmarks.Series.PrimesBenchmarks.ComputePrimes(N: 10000)",
+            "value": 18252.54996948242,
+            "unit": "ns",
+            "range": "± 105.84666523339173"
+          },
+          {
+            "name": "Benchmarks.Sorting.BubbleSortBenchmarks.BubbleSort_Ascending(N: 1000)",
+            "value": 32381.697674418603,
+            "unit": "ns",
+            "range": "± 1207.29935797066"
+          },
+          {
+            "name": "Benchmarks.Sorting.InsertionSortBenchmarks.InsertionSort_Ascending(N: 1000)",
+            "value": 21459.576923076922,
+            "unit": "ns",
+            "range": "± 346.22667467485843"
+          },
+          {
+            "name": "Benchmarks.Sorting.MergeSortBenchmarks.MergeSort_Ascending(N: 1000)",
+            "value": 212705.45,
+            "unit": "ns",
+            "range": "± 55627.003357114474"
+          },
+          {
+            "name": "Benchmarks.Sorting.QuickSortBenchmarks.QuickSort_Ascending(N: 1000)",
+            "value": 5068444.071428572,
+            "unit": "ns",
+            "range": "± 5480.100595150333"
+          },
+          {
+            "name": "Benchmarks.Sorting.BubbleSortBenchmarks.BubbleSort_Random(N: 1000)",
+            "value": 925080.2307692308,
+            "unit": "ns",
+            "range": "± 11536.022792062016"
+          },
+          {
+            "name": "Benchmarks.Sorting.InsertionSortBenchmarks.InsertionSort_Random(N: 1000)",
+            "value": 454829.78571428574,
+            "unit": "ns",
+            "range": "± 640.7173177920831"
+          },
+          {
+            "name": "Benchmarks.Sorting.MergeSortBenchmarks.MergeSort_Random(N: 1000)",
+            "value": 236297.76923076922,
+            "unit": "ns",
+            "range": "± 3807.3702681738687"
+          },
+          {
+            "name": "Benchmarks.Sorting.QuickSortBenchmarks.QuickSort_Random(N: 1000)",
+            "value": 570222.8333333334,
+            "unit": "ns",
+            "range": "± 3485.735772944914"
+          },
+          {
+            "name": "Benchmarks.Sorting.BubbleSortBenchmarks.BubbleSort_Descending(N: 1000)",
+            "value": 969700.4615384615,
+            "unit": "ns",
+            "range": "± 8848.761736493461"
+          },
+          {
+            "name": "Benchmarks.Sorting.InsertionSortBenchmarks.InsertionSort_Descending(N: 1000)",
+            "value": 800031.2307692308,
+            "unit": "ns",
+            "range": "± 1269.8963313230306"
+          },
+          {
+            "name": "Benchmarks.Sorting.MergeSortBenchmarks.MergeSort_Descending(N: 1000)",
+            "value": 208084.09,
+            "unit": "ns",
+            "range": "± 32573.375190094222"
+          },
+          {
+            "name": "Benchmarks.Sorting.QuickSortBenchmarks.QuickSort_Descending(N: 1000)",
+            "value": 3944834,
+            "unit": "ns",
+            "range": "± 8969.658504776406"
+          },
+          {
+            "name": "Benchmarks.Sorting.BubbleSortBenchmarks.BubbleSort_Ascending(N: 10000)",
+            "value": 29568.79487179487,
+            "unit": "ns",
+            "range": "± 1028.9526657694523"
+          },
+          {
+            "name": "Benchmarks.Sorting.InsertionSortBenchmarks.InsertionSort_Ascending(N: 10000)",
+            "value": 29930.81081081081,
+            "unit": "ns",
+            "range": "± 885.3693779634776"
+          },
+          {
+            "name": "Benchmarks.Sorting.MergeSortBenchmarks.MergeSort_Ascending(N: 10000)",
+            "value": 462875.06666666665,
+            "unit": "ns",
+            "range": "± 5187.832474256699"
+          },
+          {
+            "name": "Benchmarks.Sorting.QuickSortBenchmarks.QuickSort_Ascending(N: 10000)",
+            "value": 512209867.2,
+            "unit": "ns",
+            "range": "± 309859.0989037713"
+          },
+          {
+            "name": "Benchmarks.Sorting.BubbleSortBenchmarks.BubbleSort_Random(N: 10000)",
+            "value": 85489017.64285715,
+            "unit": "ns",
+            "range": "± 723993.4876662706"
+          },
+          {
+            "name": "Benchmarks.Sorting.InsertionSortBenchmarks.InsertionSort_Random(N: 10000)",
+            "value": 38598239.428571425,
+            "unit": "ns",
+            "range": "± 58911.549046286054"
+          },
+          {
+            "name": "Benchmarks.Sorting.MergeSortBenchmarks.MergeSort_Random(N: 10000)",
+            "value": 1050747.2857142857,
+            "unit": "ns",
+            "range": "± 7382.146023487202"
+          },
+          {
+            "name": "Benchmarks.Sorting.QuickSortBenchmarks.QuickSort_Random(N: 10000)",
+            "value": 6731295.166666667,
+            "unit": "ns",
+            "range": "± 34480.96856583491"
+          },
+          {
+            "name": "Benchmarks.Sorting.BubbleSortBenchmarks.BubbleSort_Descending(N: 10000)",
+            "value": 93977669.26923077,
+            "unit": "ns",
+            "range": "± 958196.5661808084"
+          },
+          {
+            "name": "Benchmarks.Sorting.InsertionSortBenchmarks.InsertionSort_Descending(N: 10000)",
+            "value": 77471579.33333333,
+            "unit": "ns",
+            "range": "± 103990.4819790851"
+          },
+          {
+            "name": "Benchmarks.Sorting.MergeSortBenchmarks.MergeSort_Descending(N: 10000)",
+            "value": 505800.5,
+            "unit": "ns",
+            "range": "± 10652.677538313741"
+          },
+          {
+            "name": "Benchmarks.Sorting.QuickSortBenchmarks.QuickSort_Descending(N: 10000)",
+            "value": 348830520.34615386,
+            "unit": "ns",
+            "range": "± 222150.5492565219"
           }
         ]
       }
