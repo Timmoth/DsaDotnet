@@ -1,6 +1,6 @@
 ﻿using DsaDotnet.Graphs;
 
-namespace Benchmarks.Graphs;
+namespace Benchmarks.Search;
 
 public class RandomWeightedNetworkGenerator<T> where T : IEquatable<T>
 {

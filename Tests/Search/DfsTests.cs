@@ -1,13 +1,14 @@
-﻿using DsaDotnet.Graphs;
+﻿using DsaDotnet;
+using DsaDotnet.Graphs;
 using FluentAssertions;
 
-namespace Tests.Graphs;
+namespace Tests.Search;
 
-public class BfsTests
+public class DfsTests
 {
     [Theory]
     [ClassData(typeof(GraphSearchTestData))]
-    public void Bfs_Finds_ShortestPath_From_Source_To_Destination((int a, int b)[] edges,
+    public void Dfs_Finds_ShortestPath_From_Source_To_Destination((int a, int b)[] edges,
         Predicate<Node<int>> predicate,
         int start, int? expected)
     {
@@ -16,7 +17,7 @@ public class BfsTests
         graph.AddEdges(edges);
 
         // Act
-        var node = graph.BreadthFirstSearch(start, predicate);
+        var node = graph.DepthFirstSearch(start, predicate);
 
         // Assert
         node?.Key.Should().Be(expected);

@@ -1,6 +1,6 @@
 ﻿using DsaDotnet.Graphs;
 
-namespace Tests.Graphs;
+namespace Tests.Search;
 
 public class GraphSearchTestData : TheoryData<(int a, int b)[], Predicate<Node<int>>, int, int?>
 {

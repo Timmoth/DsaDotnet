@@ -1,6 +1,6 @@
 ﻿using DsaDotnet.Graphs;
 
-namespace Tests.Graphs;
+namespace Tests.Search;
 
 public class ShortestPathSearchTestData : TheoryData<(int a, int b)[], Predicate<WeightedNode<int>>, int, int[]?>
 {

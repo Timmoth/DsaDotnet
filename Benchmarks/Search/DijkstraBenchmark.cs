@@ -1,7 +1,8 @@
 ﻿using BenchmarkDotNet.Attributes;
+using DsaDotnet;
 using DsaDotnet.Graphs;
 
-namespace Benchmarks.Graphs;
+namespace Benchmarks.Search;
 
 public class DijkstraBenchmark
 {
@@ -17,7 +18,7 @@ public class DijkstraBenchmark
     }
 
     [Benchmark]
-    [BenchmarkCategory("Graph")]
+    [BenchmarkCategory("Search")]
     public void Dijkstra()
     {
         _graph.Dijkstra(0, i => i.Key == N - 1);

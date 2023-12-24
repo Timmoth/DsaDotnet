@@ -29,8 +29,8 @@ public class Node<T> : INode<Node<T>, T> where T : IEquatable<T>
 
 public class WeightedNode<T> : INode<WeightedNode<T>, T> where T : IEquatable<T>
 {
-    private readonly List<(int, WeightedNode<T>)> _weightedNeighbors = new();
     private readonly List<WeightedNode<T>> _neighbors = new();
+    private readonly List<(int, WeightedNode<T>)> _weightedNeighbors = new();
     public required T Key { get; set; }
 
     public IReadOnlyList<WeightedNode<T>> GetNeighbors()
