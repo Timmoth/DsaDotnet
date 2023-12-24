@@ -6,14 +6,14 @@ public class RandomUnweightedNetworkGenerator<T> where T : IEquatable<T>
 {
     private readonly Random _random = new(0);
 
-    public Node<T>[] GenerateRandomNetwork(int n, Func<int, Node<T>> nodeGenerator)
+    public GraphNode<T>[] GenerateRandomNetwork(int n, Func<int, GraphNode<T>> nodeGenerator)
     {
         if (n <= 0)
         {
             throw new ArgumentException("Number of nodes should be greater than zero.");
         }
 
-        var nodes = new Node<T>[n];
+        var nodes = new GraphNode<T>[n];
         for (var i = 0; i < n; i++)
         {
             nodes[i] = nodeGenerator(i);
@@ -24,7 +24,7 @@ public class RandomUnweightedNetworkGenerator<T> where T : IEquatable<T>
         return nodes;
     }
 
-    private void ConnectRandomNodes(IReadOnlyList<Node<T>> nodes)
+    private void ConnectRandomNodes(IReadOnlyList<GraphNode<T>> nodes)
     {
         foreach (var node in nodes)
         {

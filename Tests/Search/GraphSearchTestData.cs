@@ -2,7 +2,7 @@
 
 namespace Tests.Search;
 
-public class GraphSearchTestData : TheoryData<(int a, int b)[], Predicate<Node<int>>, int, int?>
+public class GraphSearchTestData : TheoryData<(int a, int b)[], Predicate<GraphNode<int>>, int, int?>
 {
     public GraphSearchTestData()
     {

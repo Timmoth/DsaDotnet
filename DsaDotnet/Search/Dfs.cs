@@ -5,7 +5,7 @@ namespace DsaDotnet;
 public static partial class Search
 {
     public static T? DepthFirstSearch<T, U>(this Graph<T, U> graph, U start, Predicate<T> predicate)
-        where U : IEquatable<U> where T : class?, INode<T, U>
+        where U : IEquatable<U> where T : class?, IGraphNode<T, U>
     {
         if (!graph.Nodes.TryGetValue(start, out var startNode))
         {

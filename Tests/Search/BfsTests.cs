@@ -9,7 +9,7 @@ public class BfsTests
     [Theory]
     [ClassData(typeof(GraphSearchTestData))]
     public void Bfs_Finds_ShortestPath_From_Source_To_Destination((int a, int b)[] edges,
-        Predicate<Node<int>> predicate,
+        Predicate<GraphNode<int>> predicate,
         int start, int? expected)
     {
         // Arrange

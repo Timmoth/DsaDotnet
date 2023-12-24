@@ -4,8 +4,8 @@ namespace DsaDotnet;
 
 public static partial class Search
 {
-    public static ICollection<WeightedNode<U>>? Dijkstra<U>(this WeightedGraph<U> graph, U start,
-        Predicate<WeightedNode<U>> predicate)
+    public static ICollection<WeightedGraphNode<U>>? Dijkstra<U>(this WeightedGraph<U> graph, U start,
+        Predicate<WeightedGraphNode<U>> predicate)
         where U : IEquatable<U>
     {
         if (!graph.Nodes.TryGetValue(start, out var startNode))
@@ -16,14 +16,14 @@ public static partial class Search
         if (predicate(startNode))
         {
             // Start node matches predicate, exit early.
-            return new List<WeightedNode<U>> { startNode };
+            return new List<WeightedGraphNode<U>> { startNode };
         }
 
-        var distances = new Dictionary<WeightedNode<U>, int>();
-        var previous = new Dictionary<WeightedNode<U>, WeightedNode<U>>();
-        var priorityQueue = new SortedDictionary<int, WeightedNode<U>>(); // Stores nodes by distance
+        var distances = new Dictionary<WeightedGraphNode<U>, int>();
+        var previous = new Dictionary<WeightedGraphNode<U>, WeightedGraphNode<U>>();
+        var priorityQueue = new SortedDictionary<int, WeightedGraphNode<U>>(); // Stores nodes by distance
 
-        WeightedNode<U>? endNode = null;
+        WeightedGraphNode<U>? endNode = null;
         // Set distance to each node as the maximum
         foreach (var node in graph.Nodes.Values)
         {
@@ -70,7 +70,7 @@ public static partial class Search
         }
 
         // Reconstruct the shortest path
-        var shortestPath = new List<WeightedNode<U>>();
+        var shortestPath = new List<WeightedGraphNode<U>>();
         var c = endNode;
         while (c != null)
         {

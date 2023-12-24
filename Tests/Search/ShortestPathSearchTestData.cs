@@ -2,7 +2,7 @@
 
 namespace Tests.Search;
 
-public class ShortestPathSearchTestData : TheoryData<(int a, int b)[], Predicate<WeightedNode<int>>, int, int[]?>
+public class ShortestPathSearchTestData : TheoryData<(int a, int b)[], Predicate<WeightedGraphNode<int>>, int, int[]?>
 {
     public ShortestPathSearchTestData()
     {

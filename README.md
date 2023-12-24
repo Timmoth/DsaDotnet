@@ -34,6 +34,38 @@ dotnet-stryker
 ```
 Running Stryker will output a report outlining which mutations (essentially bugs) were introduced into your code that did not cause any tests to fail.
 
+## Data Structures
+
+### Binary Tree
+A hierarchical data structure composed of nodes. Each node can have a left and right child node where left node is less than and the right node is greater than the parent node.
+
+Usage
+```cs
+ var tree = new BinaryTree<int>();
+ tree.Insert(0, 1, 2, 3);
+ var node = tree.Search(2);
+```
+
+### Unweighted Graph
+A collection of vertices connected by edges.
+
+Usage
+```cs
+ var graph = new UnWeightedGraph<int>();
+ graph.AddEdges((0, 1), (1, 2), (2, 3));
+```
+
+### Weighted Graph
+A collection of vertices connected by edges, where each edge has an associated weight.
+
+Usage
+```cs
+ var graph = new WeightedGraph<int>();
+ graph.AddEdges(new []{(0, 1), (1, 2), (2, 3)}, 1);
+ graph.AddEdges((3, 4, 1), (4, 5, 1));
+
+```
+
 ## Sequence and Series Algorithms
 To run the benchmarks for all Sequence and Series algorithms:
 ```console
@@ -103,7 +135,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Primes*
 ```
 
-## Search
+## Search Algorithms
 To run the benchmarks for all search algorithms:
 ```console
  dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --allCategories=Search --join
@@ -185,7 +217,7 @@ Benchmarks
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Dijkstra*
 ```
 
-## Sorting
+## Sorting Algorithms
 
 To run the benchmarks for all sorting algorithms:
 ```
