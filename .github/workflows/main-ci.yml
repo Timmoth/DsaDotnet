@@ -29,7 +29,7 @@ jobs:
       id: stryker
       run: |
         cd Tests
-        dotnet stryker --config-file "./stryker-config.json" --dashboard-api-key "${{ secrets.STRYKER_DASHBOARD_API_KEY }}" --output ${{ env.StrykerDirectory }} --project "DsaDotnet.csproj" --version "${{ github.sha }}"
+        dotnet stryker --config-file "./stryker-config.json" --dashboard-api-key "${{ secrets.STRYKER_DASHBOARD_API_KEY }}" --output ${{ env.StrykerDirectory }} --project "DsaDotnet.csproj" --version "main"
       
     - uses: actions/upload-artifact@v3
       with:
