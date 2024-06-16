@@ -3,7 +3,7 @@
 
 A collection of optimised algorithms and datastructures.
 
-If you can think of a way to improve any of the existing implementations feel free to open a PR and see if you can beat my benchmarks!
+This is a collaborative and beginner-friendly repository! If you have any ideas for improvements or would like to get involved, please feel free to open a pull request or get in touch!
 
 ## [Docs](https://timmoth.github.io/DsaDotnet/)
 - [Overview](https://timmoth.github.io/DsaDotnet/)
