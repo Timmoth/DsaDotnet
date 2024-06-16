@@ -1,0 +1,43 @@
+site_name: DsaDotnet Docs
+site_url: https://timmoth.github.io/DsaDotnet/
+site_description: A collection of algorithms and datastructures.
+site_author: Timmoth
+repo_url: https://github.com/Timmoth/DsaDotnet/
+edit_uri: edit/main/docs
+
+theme:
+  name: readthedocs
+  highlightjs: true
+  logo: assets/logo.png
+  hljs_languages:
+    - csharp
+nav:
+  - Overview ✅: index.md
+  - Releases 📒: releases.md
+  - Tests 🐞: tests.md
+  - Benchmarks ⏱️: benchmarks.md
+  - Contributing 🙏: contributing.md
+  - Arithmetic:
+      - Greatest Common Divisor: Arithmetic/greatest_common_divisor.md
+      - Least Common Multiple: Arithmetic/least_common_multiple.md
+  - Data Structures:
+      - Binary Tree: DataStructures/binary_tree.md
+      - Unweighted Graph: DataStructures/unweighted_graph.md
+      - Weighted Graph: DataStructures/weighted_graph.md
+  - Search:
+      - Binary: Search/binary_search.md
+      - Breadth first: Search/breadth_first_search.md
+      - Depth First: Search/depth_first_search.md
+      - Djikstras: Search/djikstras.md
+      - Linear: Search/linear_search.md
+  - Sequence And Series:
+      - Factorial: SequenceAndSeries/factorial.md
+      - Fibonacci: SequenceAndSeries/fibonacci.md
+      - Primes: SequenceAndSeries/primes.md
+  - Sorting:
+      - Bubble: Sorting/bubble_sort.md
+      - Insertion: Sorting/insertion_sort.md
+      - Merge: Sorting/merge_sort.md
+      - Quick: Sorting/quick_sort.md
+markdown_extensions:
+  - tables
