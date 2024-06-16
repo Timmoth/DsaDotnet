@@ -7,13 +7,13 @@ public class GraphTests
 {
     [Theory]
     [InlineData(new int[] { })]
-    [InlineData(new int[] { 1, 2 })]
-    [InlineData(new int[] { 1, 1 })]
+    [InlineData(new[] { 1, 2 })]
+    [InlineData(new[] { 1, 1 })]
     public void WeightedGraph_AddNodes(int[] nodeKeys)
     {
         // Arrange
         var graph = new WeightedGraph<int>();
-        graph.AddNodes(nodeKeys.Select(n => new WeightedGraphNode<int>() { Key = n }).ToArray());
+        graph.AddNodes(nodeKeys.Select(n => new WeightedGraphNode<int> { Key = n }).ToArray());
 
         // Act
         var nodes = graph.AllNodes();
@@ -58,13 +58,13 @@ public class GraphTests
 
     [Theory]
     [InlineData(new int[] { })]
-    [InlineData(new int[] { 1, 2 })]
-    [InlineData(new int[] { 1, 1 })]
+    [InlineData(new[] { 1, 2 })]
+    [InlineData(new[] { 1, 1 })]
     public void UnWeightedGraph_AddNodes(int[] nodeKeys)
     {
         // Arrange
         var graph = new UnWeightedGraph<int>();
-        graph.AddNodes(nodeKeys.Select(n => new GraphNode<int>() { Key = n }).ToArray());
+        graph.AddNodes(nodeKeys.Select(n => new GraphNode<int> { Key = n }).ToArray());
 
         // Act
         var nodes = graph.AllNodes();
@@ -92,14 +92,14 @@ public class GraphTests
 
     [Theory]
     [InlineData(new int[] { })]
-    [InlineData(new int[] { 0 })]
+    [InlineData(new[] { 0 })]
     [InlineData(new[] { 1, 2, 3 })]
     [InlineData(new[] { 1, 1 })]
     public void GraphNode_AddNeighbor(int[] neighborKeys)
     {
         // Arrange
-        var node = new GraphNode<int>() { Key = 0 };
-        var neighborNodes = neighborKeys.Select(k => new GraphNode<int>() { Key = k });
+        var node = new GraphNode<int> { Key = 0 };
+        var neighborNodes = neighborKeys.Select(k => new GraphNode<int> { Key = k });
 
         // Act
         foreach (var neighborNode in neighborNodes)
