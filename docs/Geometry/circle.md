@@ -1,4 +1,3 @@
-Find a value within a sorted array by dividing the search interval in half at each step.
 
 #### [Implementation](https://github.com/Timmoth/DsaDotnet/blob/main/DsaDotnet/Geometry/Circle.cs)
 

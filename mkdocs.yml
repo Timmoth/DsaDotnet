@@ -26,7 +26,11 @@ nav:
       - Weighted Graph: DataStructures/weighted_graph.md
   - Geometry:
       - Circle: Geometry/circle.md
+      - Ellipse: Geometry/ellipse.md
+      - Polygon: Geometry/polygon.md
+      - Polyline: Geometry/polyline.md
       - Rectangle: Geometry/rectangle.md
+      - RegularPolygon: Geometry/regular_polygon.md
       - Triangle: Geometry/triangle.md
 
   - Search:

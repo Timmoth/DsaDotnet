@@ -23,7 +23,11 @@ This is a collaborative and beginner-friendly repository! If you have any ideas 
 
 ### Geometry
 - [Circle](https://timmoth.github.io/DsaDotnet/Geometry/circle/)
+- [Ellipse](https://timmoth.github.io/DsaDotnet/Geometry/ellipse/)
+- [Polygon](https://timmoth.github.io/DsaDotnet/Geometry/polygon/)
+- [Polyline](https://timmoth.github.io/DsaDotnet/Geometry/polyline/)
 - [Rectangle](https://timmoth.github.io/DsaDotnet/Geometry/rectangle/)
+- [RegularPolygon](https://timmoth.github.io/DsaDotnet/Geometry/regular_polygon/)
 - [Triangle](https://timmoth.github.io/DsaDotnet/Geometry/triangle/)
 
 ### Search
