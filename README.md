@@ -23,6 +23,8 @@ If you can think of a way to improve any of the existing implementations feel fr
 
 ### Geometry
 - [Circle](https://timmoth.github.io/DsaDotnet/Geometry/circle/)
+- [Rectangle](https://timmoth.github.io/DsaDotnet/Geometry/rectangle/)
+- [Triangle](https://timmoth.github.io/DsaDotnet/Geometry/triangle/)
 
 ### Search
 - [Binary](https://timmoth.github.io/DsaDotnet/Search/binary_search/)

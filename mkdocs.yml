@@ -26,6 +26,9 @@ nav:
       - Weighted Graph: DataStructures/weighted_graph.md
   - Geometry:
       - Circle: Geometry/circle.md
+      - Rectangle: Geometry/rectangle.md
+      - Triangle: Geometry/triangle.md
+
   - Search:
       - Binary: Search/binary_search.md
       - Breadth first: Search/breadth_first_search.md

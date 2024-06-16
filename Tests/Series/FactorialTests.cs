@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using DsaDotnet;
+using DsaDotnet.Geometry;
 using FluentAssertions;
 
 namespace Tests.Series;
@@ -18,7 +19,9 @@ public class BfsTests
     public void Factorial_Returns_CorrectValue(int n, ulong expected)
     {
         // Arrange
-
+        var a = new Triangle(Vector2.One, Vector2.UnitX, Vector2.UnitY);
+        var b = new Triangle(Vector2.Zero, Vector2.One, Vector2.UnitX);
+        var intersects = a.Intersects(b);
         // Act
         var result = n.Factorial();
 
