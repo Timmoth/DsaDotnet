@@ -2,6 +2,11 @@
 
 public class WeightedGraph<U> : Graph<WeightedGraphNode<U>, U> where U : IEquatable<U>
 {
+    /// <summary>
+    /// Adds weighted edges to the graph.
+    /// </summary>
+    /// <param name="edges">The array of edges to add.</param>
+    /// <param name="weight">The weight of the edges.</param>
     public void AddEdges((U source, U destination)[] edges, int weight)
     {
         for (var i = 0; i < edges.Length; i++)
@@ -21,6 +26,10 @@ public class WeightedGraph<U> : Graph<WeightedGraphNode<U>, U> where U : IEquata
         }
     }
 
+    /// <summary>
+    /// Adds weighted edges to the graph.
+    /// </summary>
+    /// <param name="edges">The array of edges to add.</param>
     public void AddEdges((U source, U destination, int weight)[] edges)
     {
         for (var i = 0; i < edges.Length; i++)

@@ -1,4 +1,4 @@
-# DsaDotnet
+# DsaDotnet ![Logo](DsaDotnet/logo.png)
 [![NuGet](https://img.shields.io/nuget/v/DsaDotnet)](https://www.nuget.org/packages/DsaDotnet)
 
 A collection of optimised algorithms and datastructures.

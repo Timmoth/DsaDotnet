@@ -2,6 +2,13 @@
 
 public static partial class Sorting
 {
+    /// <summary>
+    /// Sorts the elements of the sequence using the QuickSort algorithm.
+    /// </summary>
+    /// <typeparam name="T">The type of the elements in the sequence.</typeparam>
+    /// <param name="source">The sequence to sort.</param>
+    /// <param name="comparer">The comparer to use for comparing elements. If null, the default comparer for the type is used.</param>
+    /// <returns>A new array containing the sorted elements.</returns>
     public static T[] QuickSort<T>(this IEnumerable<T> source, IComparer<T>? comparer = null)
     {
         var elementArray = source.ToArray();
@@ -9,6 +16,12 @@ public static partial class Sorting
         return elementArray;
     }
 
+    /// <summary>
+    /// Sorts the elements of the list using the QuickSort algorithm.
+    /// </summary>
+    /// <typeparam name="T">The type of the elements in the list.</typeparam>
+    /// <param name="source">The list to sort.</param>
+    /// <param name="comparer">The comparer to use for comparing elements. If null, the default comparer for the type is used.</param>
     public static void QuickSortInPlace<T>(this IList<T> source, IComparer<T>? comparer = null)
     {
         if (source.Count < 2)

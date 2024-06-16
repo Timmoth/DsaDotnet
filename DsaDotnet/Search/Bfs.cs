@@ -4,6 +4,16 @@ namespace DsaDotnet;
 
 public static partial class Search
 {
+    /// <summary>
+    /// Performs a breadth-first search on the specified graph starting from the given node and using the provided predicate.
+    /// </summary>
+    /// <typeparam name="T">The type of the graph.</typeparam>
+    /// <typeparam name="U">The type of the graph nodes.</typeparam>
+    /// <param name="graph">The graph to perform the search on.</param>
+    /// <param name="start">The starting node.</param>
+    /// <param name="predicate">The predicate used to determine if a node matches the search criteria.</param>
+    /// <returns>The first node that matches the search criteria, or null if no such node is found.</returns>
+    /// <exception cref="ArgumentException">Thrown when the start node does not exist in the graph.</exception>
     public static T? BreadthFirstSearch<T, U>(this Graph<T, U> graph, U start, Predicate<T> predicate)
         where U : IEquatable<U> where T : class?, IGraphNode<T, U>
     {

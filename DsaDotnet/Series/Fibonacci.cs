@@ -4,6 +4,12 @@ namespace DsaDotnet;
 
 public static partial class Series
 {
+    /// <summary>
+    /// Calculates the Fibonacci number at the specified index.
+    /// </summary>
+    /// <param name="input">The index of the Fibonacci number to calculate.</param>
+    /// <returns>The Fibonacci number at the specified index.</returns>
+    /// <exception cref="ArgumentException">Thrown when the input is a negative number.</exception>
     public static ulong Fibonacci(this int input)
     {
         if (input <= 1)

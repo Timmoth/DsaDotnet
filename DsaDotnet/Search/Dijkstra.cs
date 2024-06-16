@@ -4,6 +4,15 @@ namespace DsaDotnet;
 
 public static partial class Search
 {
+    /// <summary>
+    /// Finds the shortest path in a weighted graph using Dijkstra's algorithm.
+    /// </summary>
+    /// <typeparam name="U">The type of the node values in the graph.</typeparam>
+    /// <param name="graph">The weighted graph.</param>
+    /// <param name="start">The start node value.</param>
+    /// <param name="predicate">The predicate used to determine the end node.</param>
+    /// <returns>The collection of nodes representing the shortest path, or null if no path is found.</returns>
+    /// <exception cref="ArgumentException">Thrown when the start node does not exist in the graph.</exception>
     public static ICollection<WeightedGraphNode<U>>? Dijkstra<U>(this WeightedGraph<U> graph, U start,
         Predicate<WeightedGraphNode<U>> predicate)
         where U : IEquatable<U>

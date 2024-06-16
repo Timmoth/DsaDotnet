@@ -2,6 +2,10 @@
 
 public class UnWeightedGraph<U> : Graph<GraphNode<U>, U> where U : IEquatable<U>
 {
+    /// <summary>
+    /// Adds edges to the graph.
+    /// </summary>
+    /// <param name="edges">The edges to add.</param>
     public void AddEdges(params (U source, U destination)[] edges)
     {
         for (var i = 0; i < edges.Length; i++)

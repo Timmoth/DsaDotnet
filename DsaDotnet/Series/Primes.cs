@@ -2,6 +2,11 @@
 
 public static partial class Series
 {
+    /// <summary>
+    /// Generates a list of prime numbers up to the specified number.
+    /// </summary>
+    /// <param name="n">The upper limit for generating prime numbers.</param>
+    /// <returns>A list of prime numbers up to the specified number.</returns>
     public static List<int> PrimesUpTo(this int n)
     {
         var primes = new List<int>();
