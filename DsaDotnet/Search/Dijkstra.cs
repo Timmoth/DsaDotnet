@@ -30,7 +30,7 @@ public static partial class Search
 
         var distances = new Dictionary<WeightedGraphNode<U>, int>();
         var previous = new Dictionary<WeightedGraphNode<U>, WeightedGraphNode<U>>();
-        var priorityQueue = new SortedDictionary<int, WeightedGraphNode<U>>(); // Stores nodes by distance
+        var priorityQueue = new PriorityQueue<WeightedGraphNode<U>, int>(); // Stores nodes by distance
 
         WeightedGraphNode<U>? endNode = null;
         // Set distance to each node as the maximum
@@ -51,24 +51,23 @@ public static partial class Search
 
         // Distance to the start node is 0.
         distances[startNode] = 0;
-        priorityQueue[0] = startNode;
+        priorityQueue.Enqueue(startNode, 0);
 
         while (priorityQueue.Count > 0)
         {
-            var current = priorityQueue.First();
-            priorityQueue.Remove(current.Key);
+            var current = priorityQueue.Dequeue();
 
-            foreach (var (weight, neighbor) in current.Value.GetWeightedNeighbors())
+            foreach (var (weight, neighbor) in current.GetWeightedNeighbors())
             {
-                var newDistance = distances[current.Value] + weight;
+                var newDistance = distances[current] + weight;
                 if (newDistance >= distances[neighbor])
                 {
                     continue;
                 }
 
                 distances[neighbor] = newDistance;
-                previous[neighbor] = current.Value;
-                priorityQueue[newDistance] = neighbor;
+                previous[neighbor] = current;
+                priorityQueue.Enqueue(neighbor, newDistance);
             }
         }
 
