@@ -9,7 +9,9 @@ graph.AddEdges((0, 1), (1, 2), (2, 3));
 var path = graph.Dijkstra(0, n => n.Key == 3);
 ```
 
-#### Benchmarks
+#### [Benchmarks](https://github.com/Timmoth/DsaDotnet/blob/main/Benchmarks/Search/DijkstraBenchmark.cs)
 ```
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Dijkstra*
 ```
+
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Search/DijkstraTests.cs)

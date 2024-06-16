@@ -10,7 +10,10 @@ int[] input = new[] { 5, 4, 3, 2, 1 };
 input.BubbleSortInPlace();
 ```
 
-#### Benchmarks
+#### [Benchmarks](https://github.com/Timmoth/DsaDotnet/blob/main/Benchmarks/Sorting/BubbleSortBenchmarks.cs)
+
 ```console
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *BubbleSort*
 ```
+
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Sorting/BubbleSortTests.cs)

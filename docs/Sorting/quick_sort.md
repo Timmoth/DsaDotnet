@@ -10,7 +10,10 @@ int[] input = new[] { 5, 4, 3, 2, 1 };
 input.QuickSort();
 ```
 
-#### Benchmarks
+#### [Benchmarks](https://github.com/Timmoth/DsaDotnet/blob/main/Benchmarks/Sorting/QuickSortBenchmarks.cs)
+
 ```console
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *QuickSort*
 ```
+
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Sorting/QuickSortTests.cs)

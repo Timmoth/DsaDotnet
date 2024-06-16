@@ -8,3 +8,5 @@ A hierarchical data structure composed of nodes. Each node can have a left and r
  tree.Insert(0, 1, 2, 3);
  var node = tree.Search(2);
 ```
+
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Trees/BinaryTreeTests.cs)

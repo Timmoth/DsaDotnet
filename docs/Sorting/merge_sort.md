@@ -10,8 +10,10 @@ int[] input = new[] { 5, 4, 3, 2, 1 };
 input.MergeSort();
 ```
 
-#### Benchmarks
+#### [Benchmarks](https://github.com/Timmoth/DsaDotnet/blob/main/Benchmarks/Sorting/MergeSortBenchmarks.cs)
+
 ```console
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *MergeSort*
 ```
 
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Sorting/MergeSortTests.cs)

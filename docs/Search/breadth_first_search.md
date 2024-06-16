@@ -9,7 +9,9 @@ graph.AddEdges((0, 1), (1, 2), (2, 3));
 var node = graph.BreadthFirstSearch(0, n => n.Key == 3);
 ```
 
-#### Benchmarks
+#### [Benchmarks](https://github.com/Timmoth/DsaDotnet/blob/main/Benchmarks/Search/BfsBenchmarks.cs)
 ```
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Bfs*
 ```
+
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Search/BfsTests.cs)

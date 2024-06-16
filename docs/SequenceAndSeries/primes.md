@@ -12,7 +12,10 @@ List<int> result = Series.PrimesUpTo(1000);
 result = 1000.PrimesUpTo();
 ```
 
-#### Benchmarks
+#### [Benchmarks](https://github.com/Timmoth/DsaDotnet/blob/main/Benchmarks/Series/PrimesBenchmarks.cs)
+
 ```console
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Primes*
 ```
+
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Series/PrimesTests.cs)

@@ -17,7 +17,9 @@ ulong result = Series.Factorial(1000);
 result = 1000.Factorial();
 ```
 
-#### Benchmarks
+#### [Benchmarks](https://github.com/Timmoth/DsaDotnet/blob/main/Benchmarks/Series/FactorialBenchmarks.cs)
 ```
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Factorial*
 ```
+
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Series/FactorialTests.cs)

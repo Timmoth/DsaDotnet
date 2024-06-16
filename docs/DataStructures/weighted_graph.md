@@ -9,3 +9,5 @@ A collection of vertices connected by edges, where each edge has an associated w
  graph.AddEdges((3, 4, 1), (4, 5, 1));
 
 ```
+
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Graphs/GraphTests.cs)

@@ -7,7 +7,9 @@ Iterate through each element sequentially from the start until the end until the
 var index = new []{ 1, 2, 3}.LinearSearch(2);
 ```
 
-#### Benchmarks
+#### [Benchmarks](https://github.com/Timmoth/DsaDotnet/blob/main/Benchmarks/Search/LinearSearchBenchmarks.cs)
 ```
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *LinearSearch*
 ```
+
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Search/LinearSearchTests.cs)

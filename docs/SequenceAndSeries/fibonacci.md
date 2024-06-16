@@ -16,7 +16,9 @@ ulong result = Series.Fibonacci(1000);
 result = 1000.Fibonacci();
 ```
 
-#### Benchmarks
+#### [Benchmarks](https://github.com/Timmoth/DsaDotnet/blob/main/Benchmarks/Series/FibonacciBenchmarks.cs)
 ```
 dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *Fibonacci*
 ```
+
+#### [Tests](https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Series/FibonacciTests.cs)
