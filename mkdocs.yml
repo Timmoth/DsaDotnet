@@ -32,7 +32,6 @@ nav:
       - Rectangle: Geometry/rectangle.md
       - RegularPolygon: Geometry/regular_polygon.md
       - Triangle: Geometry/triangle.md
-
   - Search:
       - Binary: Search/binary_search.md
       - Breadth first: Search/breadth_first_search.md
@@ -48,5 +47,8 @@ nav:
       - Insertion: Sorting/insertion_sort.md
       - Merge: Sorting/merge_sort.md
       - Quick: Sorting/quick_sort.md
+  - Text:
+      - Knuth Morris Pratt: Text/knuth_morris_pratt.md
+      - Levenshtein Distance: Text/levenshtein_distance.md
 markdown_extensions:
   - tables

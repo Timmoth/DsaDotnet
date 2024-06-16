@@ -48,3 +48,6 @@ This is a collaborative and beginner-friendly repository! If you have any ideas 
 - [Merge](https://timmoth.github.io/DsaDotnet/Sorting/merge_sort/)
 - [Quick](https://timmoth.github.io/DsaDotnet/Sorting/quick_sort/)
 
+### Text
+- [Knuth Morris Pratt](https://timmoth.github.io/DsaDotnet/Text/knuth_morris_pratt/)
+- [Levenshtein Distance](https://timmoth.github.io/DsaDotnet/Text/bubble_sort/)
