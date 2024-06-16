@@ -24,6 +24,8 @@ nav:
       - Binary Tree: DataStructures/binary_tree.md
       - Unweighted Graph: DataStructures/unweighted_graph.md
       - Weighted Graph: DataStructures/weighted_graph.md
+  - Geometry:
+      - Circle: Geometry/circle.md
   - Search:
       - Binary: Search/binary_search.md
       - Breadth first: Search/breadth_first_search.md

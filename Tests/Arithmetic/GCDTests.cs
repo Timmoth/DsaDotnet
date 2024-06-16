@@ -1,4 +1,6 @@
-﻿namespace Tests.Arithmetic;
+﻿using FluentAssertions;
+
+namespace Tests.Arithmetic;
 
 public class GCDTests
 {
@@ -17,6 +19,6 @@ public class GCDTests
         var result = DsaDotnet.Arithmetic.GCD(a, b);
 
         // Assert
-        Assert.Equal(expected, result);
+        result.Should().Be(expected);
     }
 }

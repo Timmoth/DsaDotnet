@@ -21,6 +21,9 @@ If you can think of a way to improve any of the existing implementations feel fr
 - [Unweighted Graph](https://timmoth.github.io/DsaDotnet/DataStructures/unweighted_graph/)
 - [Weighted Graph](https://timmoth.github.io/DsaDotnet/DataStructures/weighted_graph/)
 
+### Geometry
+- [Circle](https://timmoth.github.io/DsaDotnet/Geometry/circle/)
+
 ### Search
 - [Binary](https://timmoth.github.io/DsaDotnet/Search/binary_search/)
 - [Breadth First](https://timmoth.github.io/DsaDotnet/Search/breadth_first_search/)
