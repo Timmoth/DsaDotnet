@@ -1,6 +1,7 @@
 ﻿using System.Numerics;
 using DsaDotnet.Geometry;
 using FluentAssertions;
+using FluentAssertions.Specialized;
 
 namespace Tests.Geometry;
 
@@ -135,5 +136,58 @@ public class CircleTests
 
         // Assert
         result.Should().Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1, 0, 1, true)]
+    [InlineData(2, 0, 1, true)]
+    [InlineData(3, 0, 1, false)]
+    [InlineData(0, 0, 2, false)]
+    public void Circle_Intersects_Returns_CorrectValue(float x, float y, float r, bool expected)
+    {
+        // Arrange
+        var sut = new Circle(new Vector2(0, 0), 1);
+        var circle = new Circle(new Vector2(x, y), r);
+
+        // Act
+        var result = sut.Intersects(circle);
+
+        // Assert
+        result.Should().Be(expected);
+    }
+
+    [Theory]
+    [InlineData(1, 0, 0.5f, -0.866f, 0.5f, 0.866f)]
+    [InlineData(2, 0, 1, 0, 1, 0)]
+    public void Circle_Intersect_Returns_CorrectValues(float x, float y, float i1X, float i1Y, float i2X, float i2Y)
+    {
+        // Arrange
+        var sut = new Circle(new Vector2(0, 0), 1);
+        var circle = new Circle(new Vector2(x, y), 1);
+
+        // Act
+        var result = sut.Intersect(circle, out var actual);
+
+        // Assert
+        result.Should().BeTrue();
+        actual[0].X.Should().BeApproximately(i1X, 0.0001f);
+        actual[0].Y.Should().BeApproximately(i1Y, 0.0001f);
+
+        actual[1].X.Should().BeApproximately(i2X, 0.0001f);
+        actual[1].Y.Should().BeApproximately(i2Y, 0.0001f);
+    }
+
+    [Fact]
+    public void Circle_Intersect_Returns_False_When_No_Intersection()
+    {
+        // Arrange
+        var sut = new Circle(new Vector2(0, 0), 1);
+        var circle = new Circle(new Vector2(3, 0), 1);
+
+        // Act
+        var result = sut.Intersect(circle, out _);
+
+        // Assert
+        result.Should().BeFalse();
     }
 }
