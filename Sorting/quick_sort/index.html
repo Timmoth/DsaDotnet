@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Timmoth" /><link rel="canonical" href="https://timmoth.github.io/DsaDotnet/Sorting/quick_sort/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Quick - DsaDotnet Docs</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Quick";
+        var mkdocs_page_input_path = "Sorting/quick_sort.md";
+        var mkdocs_page_url = "/DsaDotnet/Sorting/quick_sort/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/csharp.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../..">
+          <img src="../../assets/logo.png" class="logo" alt="Logo"/>
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Overview ✅</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../releases/">Releases 📒</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../tests/">Tests 🐞</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../benchmarks/">Benchmarks ⏱️</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../contributing/">Contributing 🙏</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Arithmetic</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Arithmetic/greatest_common_divisor/">Greatest Common Divisor</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Arithmetic/least_common_multiple/">Least Common Multiple</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Data Structures</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DataStructures/binary_tree/">Binary Tree</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DataStructures/kvp_binary_tree/">Kvp Binary Tree</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DataStructures/unweighted_graph/">Unweighted Graph</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../DataStructures/weighted_graph/">Weighted Graph</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Geometry</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Geometry/circle/">Circle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Geometry/ellipse/">Ellipse</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Geometry/polygon/">Polygon</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Geometry/polyline/">Polyline</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Geometry/rectangle/">Rectangle</a>
+                  </li>
+                  <li class="toctree-l1"><a class="" href="../../Geometry/regular_polygon.md">RegularPolygon</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Geometry/triangle/">Triangle</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Search</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/binary_search/">Binary</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/breadth_first_search/">Breadth first</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/depth_first_search/">Depth First</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/djikstras/">Djikstras</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Search/linear_search/">Linear</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sequence And Series</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../SequenceAndSeries/factorial/">Factorial</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../SequenceAndSeries/fibonacci/">Fibonacci</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../SequenceAndSeries/primes/">Primes</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sorting</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../bubble_sort/">Bubble</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../insertion_sort/">Insertion</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../merge_sort/">Merge</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Quick</a>
+    <ul class="current">
+    </ul>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Text</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Text/knuth_morris_pratt/">Knuth Morris Pratt</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../Text/levenshtein_distance/">Levenshtein Distance</a>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">DsaDotnet Docs</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Sorting</li>
+      <li class="breadcrumb-item active">Quick</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/Timmoth/DsaDotnet/edit/main/docs/Sorting/quick_sort.md" class="icon icon-github"> Edit on GitHub</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <p>Uses a divide-and-conquer strategy by selecting a "pivot" element from the list and partitioning the other elements into two sub-lists according to whether they are less than or greater than the pivot. The sub-lists are then sorted recursively.</p>
+<h4 id="implementation"><a href="https://github.com/Timmoth/DsaDotnet/blob/main/DsaDotnet/Sorting/Quick.cs">Implementation</a></h4>
+<h4 id="usage">Usage</h4>
+<pre><code class="language-cs">List&lt;int&gt; result = new[] { 5, 4, 3, 2, 1 }.QuickSort();
+
+int[] input = new[] { 5, 4, 3, 2, 1 };
+input.QuickSort();
+</code></pre>
+<h4 id="benchmarks"><a href="https://github.com/Timmoth/DsaDotnet/blob/main/Benchmarks/Sorting/QuickSortBenchmarks.cs">Benchmarks</a></h4>
+<pre><code class="language-console">dotnet run --project ./Benchmarks/Benchmarks.csproj -c Release -- --job short --memory --f *QuickSort*
+</code></pre>
+<h4 id="tests"><a href="https://github.com/Timmoth/DsaDotnet/blob/main/Tests/Sorting/QuickSortTests.cs">Tests</a></h4>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../merge_sort/" class="btn btn-neutral float-left" title="Merge"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../Text/knuth_morris_pratt/" class="btn btn-neutral float-right" title="Knuth Morris Pratt">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/Timmoth/DsaDotnet/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="../merge_sort/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../Text/knuth_morris_pratt/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
