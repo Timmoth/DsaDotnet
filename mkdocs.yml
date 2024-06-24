@@ -22,6 +22,7 @@ nav:
       - Least Common Multiple: Arithmetic/least_common_multiple.md
   - Data Structures:
       - Binary Tree: DataStructures/binary_tree.md
+      - Kvp Binary Tree: DataStructures/kvp_binary_tree.md
       - Unweighted Graph: DataStructures/unweighted_graph.md
       - Weighted Graph: DataStructures/weighted_graph.md
   - Geometry:

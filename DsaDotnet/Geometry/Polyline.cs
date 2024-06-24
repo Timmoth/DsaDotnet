@@ -13,7 +13,7 @@ namespace DsaDotnet.Geometry
         public Vector2[] Points { get; }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PolyLine"/> struct.
+        /// Initializes a new instance of the <see cref="Polyline"/> struct.
         /// </summary>
         /// <param name="points">The array of points that make up the polyline.</param>
         public Polyline(Vector2[] points)

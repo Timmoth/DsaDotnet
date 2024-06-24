@@ -8,7 +8,7 @@
     <LangVersion>preview</LangVersion>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>DsaDotnet</PackageId>
-    <PackageVersion>8.0.3</PackageVersion>
+    <PackageVersion>8.0.4</PackageVersion>
     <Authors>Tim Jones</Authors>
     <Company>Aptacode</Company>
     <Description>A collection of optimised algorithms and datastructures</Description>
@@ -18,6 +18,9 @@
     <PackageTags>A collection of optimised algorithms and datastructures</PackageTags>
     <Title>DsaDotnet</Title>
     <PackageIcon>logo.png</PackageIcon>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <IncludeSymbols>true</IncludeSymbols>
+    <NoWarn>1591</NoWarn>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

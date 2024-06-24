@@ -18,6 +18,7 @@ This is a collaborative and beginner-friendly repository! If you have any ideas 
 
 ### Data Structures
 - [Binary Tree](https://timmoth.github.io/DsaDotnet/DataStructures/binary_tree/)
+- [Kvp Binary Tree](https://timmoth.github.io/DsaDotnet/DataStructures/kvp_binary_tree/)
 - [Unweighted Graph](https://timmoth.github.io/DsaDotnet/DataStructures/unweighted_graph/)
 - [Weighted Graph](https://timmoth.github.io/DsaDotnet/DataStructures/weighted_graph/)
 
